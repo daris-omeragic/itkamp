@@ -1,0 +1,17 @@
+
+
+.card{
+    border: 0.5px solid gray;
+    height: 120px;
+    width: 180px;
+    border-radius: 5px;
+    content: 20px;
+}
+
+
+
+#img-section{
+    background-color: gray;
+    border: 1px solid gray;
+}
+

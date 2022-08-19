@@ -1,0 +1,25 @@
+div,p{
+    height: 100px;
+    width: 200px;
+    background-color: darkgray;
+    position: absolute;
+    border: 1px solid blue;
+}
+
+
+
+p{
+    top:40%;
+    background-color: darkgreen;
+    left: 20%;
+}
+
+
+#image{
+    background-image: url(https://images.unsplash.com/photo-1511367461989-f85a21fda167?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&w=1000&q=80);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+
+}
+
+

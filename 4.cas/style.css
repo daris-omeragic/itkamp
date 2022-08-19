@@ -1,0 +1,45 @@
+* {
+    margin: 0px;
+}
+
+.container {
+    padding: 50px;
+}
+
+.card {
+    height: 200px;
+    border-bottom: 1px solid gray;
+    margin-top: 20px;
+}
+
+.left {
+    display: inline-block;
+    height: 100%;
+    width: 25%;
+    vertical-align: top;
+}
+
+.right {
+    display: inline-block;
+    height: 100%;
+    width: 74%;
+}
+
+
+.right p {
+    line-height: 30px;
+}
+
+.grey{
+    color: gray;
+    margin-top: 3px;
+}
+
+.blue{
+    color: blue;
+}
+
+.no-border {
+    border: none;
+}
+
