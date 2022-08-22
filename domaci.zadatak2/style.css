@@ -1,0 +1,137 @@
+*{
+    margin: 0px;
+}
+.conteiner{
+    height: 280px;
+    width: 340px;
+    border-left: 1.5px solid rgb(229, 231, 235);
+    margin-left: 60px;
+    margin-top: 50px;
+}
+.first-circle{
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    background-color: rgb(99, 102, 241);
+    margin-left: -10px;
+}
+.two-circle{
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    background-color: rgb(99, 102, 241);
+    margin-left: -10px;
+    margin-top: 50px;
+}
+.thre-circle{
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    background-color: rgb(99, 102, 241);
+    margin-left: -10px;
+    margin-top: 50px;
+}
+.four-circle{
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    background-color: rgb(99, 102, 241);
+    margin-left: -10px;
+    margin-top: 50px;
+}
+.five-circle{
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    background-color: rgb(99, 102, 241);
+    margin-left: -10px;
+    margin-top: 50px;
+}
+.conteiner-t{
+    height: 330px;
+    width: 450px;
+    background-color: rgb(249 248 251);
+    margin-left: 350px;
+    margin-top: -280px;
+    border-radius: 7px;
+}
+.img-div{
+    text-align: center;
+    color: rgb(138 138 138);
+    font-size: 90px;
+    position: relative;
+    top: 115px;
+}
+.first-step{
+    position: fixed;
+    left: 80px;
+    font-size: 10px;
+    top: 53px;
+}
+.first-paragraph{
+    font-size: 11px;
+    position: 0px;
+    position:fixed;
+    left: 74px;
+    width: 250px;
+    height: 50px;
+    top:77px;
+}
+.others-step{
+    position: fixed;
+    left: 80px;
+    font-size: 10px;
+    top: 122px;
+}
+.others-paragraph{
+    font-size: 12px;
+    position:fixed;
+    left: 74px;
+    width: 250px;
+    height: 50px;
+    top: 148px;
+}
+.third-step{
+    position: fixed;
+    left: 80px;
+    font-size: 10px;
+    top: 190px;
+}
+.third-paragraph{
+    font-size: 13px;
+    position:fixed;
+    left: 74px;
+    width: 250px;
+    height: 50px;
+    top: 213px;
+}
+.fourth-step{
+    position: fixed;
+    left: 80px;
+    font-size: 10px;
+    top: 260px;
+}
+.fourth-paragraph{
+    font-size: 12px;
+    position:fixed;
+    left: 74px;
+    width: 250px;
+    height: 50px;
+    top: 278px;
+}
+.fifth-step{
+    position: fixed;
+    left: 80px;
+    font-size: 10px;
+    top: 329px;
+}
+.fifth-paragraph{
+    font-size: 12px;
+    position:fixed;
+    left: 74px;
+    width: 250px;
+    height: 50px;
+    top: 345px;
+}
+
+
