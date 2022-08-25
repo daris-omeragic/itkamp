@@ -1,0 +1,55 @@
+.board {
+    display: grid;
+    grid-template-columns: repeat(8, 33px);
+    margin-top: 27px;
+    margin-left: 186px;
+    border: 1px solid grey;
+    padding: 10px;
+    margin-right: 275px;
+    position: fixed;
+    padding-bottom: 0px;
+    padding-left: 16px;
+    padding-right: 16px;
+    height: 285px;
+    padding-top: 20px;
+}
+
+.square {
+    width: 33px;
+    height: 33px;
+    background: #d18b47;
+}
+
+.square:nth-child(16n + 1),
+.square:nth-child(16n + 3),
+.square:nth-child(16n + 5),
+.square:nth-child(16n + 7),
+.square:nth-child(16n + 10),
+.square:nth-child(16n + 12),
+.square:nth-child(16n + 14),
+.square:nth-child(16n + 16) {
+    background:#f8b778;
+}
+.down-text{
+    display: inline-table;
+}
+.down-paragraph{
+    display: inline;
+    margin-left: 13px;
+    margin-right: 13px;
+}
+
+.right-text{
+    position: relative;
+    left: 230px;
+    top: -274px;
+    margin-left: 5px;
+    font-size: 16px;
+}
+
+.top-text{
+    display: inline-flex;
+    margin-top: -300px;
+}
+
+
