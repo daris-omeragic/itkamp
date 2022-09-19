@@ -1,0 +1,107 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    background-image: url(https://cdn1.epicgames.com/ue/product/Screenshot/1-1920x1080-9e6692063d7d2ccf783f7ac4052877c1.png?resize=1&w=1920);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.highwey{
+    height: 200px;
+    width: 500%;
+    display: block;
+    background-image: url(https://t4.ftcdn.net/jpg/03/64/26/49/240_F_364264954_RgVsr8PWa2NxRV5Ai6C0rYIeqyUDWxbn.jpg);
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    z-index: 1;
+    background-repeat: repeat-x;
+    animation: highwey 10s linear infinite;
+}
+@keyframes highwey{
+    100%{transform: translateX(-3400px);
+    }
+}
+
+.city{
+    height: 250px;
+    width: 500%;
+    background-image: url(https://previews.123rf.com/images/mspoint/mspoint1805/mspoint180500009/100957117-city-silhouette-land-scape-horizontal-city-landscape-downtown-landscape-with-high-skyscrapers-panora.jpg);
+    position: absolute;
+    bottom: 200px;
+    left: 0px;
+    right: 0px;
+    display: block;
+    z-index: 1;
+    background-repeat: repeat-x;
+    background-position: center;
+    animation: city 20s linear infinite;
+}
+@keyframes city {
+    100%{
+        transform: translateX(-1400px);
+    }
+    
+}
+
+.car{
+    width: 400px;
+    left: 50%;
+    bottom: 100px;
+    position: absolute;
+    z-index: 2;
+}
+
+.car-image{
+    width: 100%;
+    animation: car 1s linear infinite;
+}
+
+@keyframes car {
+    100%{
+        transform: translateX(-1px);
+    }
+    50%{
+        transform: translateY(1px);
+    }
+    0%{
+        transform: translateY(-1px);
+    }
+}
+.wheel{
+    left:25%;
+    bottom: 70px;
+    position: absolute;
+    z-index: 2;
+}
+.back-wheel,.front-wheel{
+    width: 83px;
+    height: 83px;
+    animation: wheel 1s linear infinite;
+}
+
+.front-wheel{
+    position: relative;
+    left:87px;
+    bottom: -67px;
+}
+
+.back-wheel{
+    position: relative;
+    left:-69px;
+    bottom: -65px;
+}
+
+@keyframes wheel {
+    100%{transform: rotate(360deg);}
+    
+}
+

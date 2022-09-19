@@ -1,0 +1,47 @@
+.image-conteiner{
+    -webkit-text-size-adjust: none;
+    color: #ffffff;
+    letter-spacing: 0.025em;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 0 !important;
+}
+
+
+
+body{
+    margin: 0;
+    padding: 0;
+}
+
+
+.image.conteiner{
+    width: 100%;
+    height: auto;
+
+}
+
+.overlay{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 47.5%;
+    height: 100%;
+    background: rgba(222, 0, 222,.6);
+    backface-visibility: hidden;
+}
+
+
+.first-image:hover{
+    opacity: 0.4;
+    transform: translate(-10%);
+}
+
+
+

@@ -1,0 +1,91 @@
+body{
+    background-color: black;
+}
+
+.conteiner{
+    width: 22rem;
+    height: 32rem;
+    background-color: white;
+    border: 1px solid darkgray;
+    position: relative;
+    left: 26rem;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.first-div{
+    width: 98%;
+    height: 22px;
+    border: 3px solid black;
+    border-radius: 9px;
+    position: relative;
+    top: 10px;
+
+}
+
+
+.second-div{
+    width: 50%;
+    height: 14rem;
+    border: 3px solid black;
+    border-radius: 9px;
+    position: relative;
+    top: 1rem;
+    left: 3px;
+}
+
+.third-div{
+    width: 50%;
+    height:10rem;
+    border: 3px solid black;
+    position: relative;
+    border-radius: 9px;
+    top: 1.5rem;
+    left: 3px;
+}
+
+
+.fourth-div{
+    width: 97%;
+    height: 3rem;
+    border: 3px solid black;
+    border-radius: 9px;
+    left: 3px;
+    position: relative;
+    top: 2rem;
+}
+
+
+.fifth-div{
+    width: 44%;
+    height: 7.4rem;
+    border: 3px solid black;
+    position: relative;
+    border-radius: 9px;
+    right: 10rem;
+    top: 3rem;
+}
+
+
+.sixth-div{
+    width: 44%;
+    height: 7.4rem;
+    border: 3px solid black;
+    position: relative;
+    border-radius: 9px;
+    right: 10rem;
+    top: 3.8rem;
+}
+
+
+.seventh-div{
+    width: 44%;
+    height: 7.3rem;
+    border: 3px solid black;
+    position: relative;
+    border-radius: 9px;
+    right: 10rem;
+    top: 4.6rem;
+}
