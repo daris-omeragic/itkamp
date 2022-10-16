@@ -37,24 +37,25 @@ console.log(result.join(''));
 
 
 
+/*
+niz=[];
+
+matrica = [
+    [0,3,6],
+    [3,6,9],
+    [6,9,12],
+]
 
 
+for (let i = 0; i < matrica.length; i++) {
+    for (let j = 0; j < matrica[i].length; j++) {
+        niz.push(matrica[i][j]*3);
+    }
+}
 
+console.log(niz);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 
 
