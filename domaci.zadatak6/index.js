@@ -21,16 +21,68 @@ reverseNumbers()
 
 
 /*
-var string = prompt("Unesite neku rec:");
-function palindrome() {
-    len = string.length;
-    for (let i = 0; i < len / 2; i++) {
-        if (string[i] !== string[len - 1 - i]) {
-            console.log("Nije palindrom");
-        } else {
-            console.log("Ovo je palindrom");
+const nekiString = "potop"
+
+const isPalindrome = (someString) => {
+    for (let i = 0; i < someString.length / 2; i++) {
+        if (someString[i] !== someString[someString.length - 1 - i]) {
+            return ("Ovo nije palindrom");
+        }
+    }
+    return ("Ovo je palindrom");
+}
+console.log(nekiString)
+console.log(isPalindrome(nekiString));
+*/
+
+/*
+nekiString ="nekomStringu"
+
+function nekaFunc(nekiString){
+    for (let i = 0; i < nekiString.length; i++) {
+        if (nekiString[i]=== "k"){
+            return nekiString[i]
+        }else{
+            return nekaDrugafunc();
         }
     }
 }
-palindrome()
+const nekaDrugafunc = () => {
+    return "uspesno vracena variabla"
+}
+
+
+
+console.log(nekaFunc("kamera"));
 */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
