@@ -1,5 +1,5 @@
 
-
+/*
 
 string = prompt("Unesite neki string :");
 
@@ -17,63 +17,6 @@ function mojaFunkcija(string) {
 console.log(string)
 console.log(mojaFunkcija(string))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 
