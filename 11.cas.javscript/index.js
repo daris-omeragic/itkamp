@@ -51,7 +51,7 @@ if (primeNumber(myNumber)){
 */
 /*
 function amountToCoins(number) {
-    appReturn = []
+    appReturn=[]
     while (number >= 0) {
         if (number >= 25) {
             number = number - 25;
@@ -65,15 +65,15 @@ function amountToCoins(number) {
         } else if (number >= 2) {
             number = number - 2;
             appReturn.push(2)
-        } else if (number >= 1) {
-            number = number - 1;
+        }else if (number >= 1){
+            number=number-1;
             appReturn.push(1)
             return appReturn;
-        }
     }
 }
+}
 
-res = amountToCoins(46)
+res= amountToCoins(46)
 
 console.log(res)
 */
@@ -81,8 +81,27 @@ console.log(res)
 
 
 
+/*
+//         0  1   2   3   4   5   6   7  8  9   10  11  12  13  14  15
 
 
 
-
-
+function binarySearch(array, variabla) {
+    min = 0;
+    max = array.length - 1;
+    guess = "";
+    while (min <= max) {
+        guess = Math.floor((min + max) / 2)
+        if (array[guess] === variabla) {
+            return guess;
+        } else if (array[guess] < variabla) {
+            min = guess + 1;
+        } else {
+            max = guess - 1;
+        }
+    }
+    return ;
+}
+var result = binarySearch(myArray, 65)
+console.log(result)
+*/
