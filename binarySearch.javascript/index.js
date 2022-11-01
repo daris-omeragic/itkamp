@@ -1,3 +1,5 @@
+/*
+
 array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 56, 57, 67, 523, 43, 556, 51, 768, 558, 889, 242]
 
 const binarySearch = (array, item) => {
@@ -19,6 +21,7 @@ const binarySearch = (array, item) => {
 }
 console.log(binarySearch(array, 67))
 
+*/
 
 
 
@@ -28,14 +31,21 @@ console.log(binarySearch(array, 67))
 
 
 
+/*
+function generateWord(wordLen){
+    characters="ABCDEFGHIJKLMNOPQRSTUWXYabcdefghijklmnopqrstuvwxyz0123456789"
+    const max = characters.length -1;
+    let word = ""
+    for (let i = 0; i < wordLen; i++) {
+        randomIndex = Math.floor(Math.random()* max)
+        word+=characters[randomIndex]
+    }
+    console.log(word)
+}
 
 
-
-
-
-
-
-
+generateWord(8)
+*/
 
 
 
