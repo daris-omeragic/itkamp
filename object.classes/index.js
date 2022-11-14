@@ -53,91 +53,47 @@ console.log(car.status());
 
 
 
+
+
+
+
+
 /*
-
-
 class TV {
-	constructor(brand) {
+	constructor (brand) {
 		this.brand = brand;
 		this.channel = 1;
 		this.volume = 50;
+	    
 	}
-	increaseVol() {
-		if (this.volume < 100) {
-			++this.volume;
+
+	inVolume () {
+		if (this.volume <= 100 && this.volume >= 0) {
+			return this.volume += 1;
 		}
 	}
-	decreaseVol() {
-		if (this.volume > 0) {
-			--this.volume;
+	deVolume () {
+		if (this.volume < 100 && this.volume > 0) {
+			return this.volume -= 1;
 		}
 	}
-	setChannel() {
-		this.channel = Math.ceil(Math.random() * 50);
+	randomChannel () {
+		this.channel = Math.floor(Math.random() * Math.abs(50) - 1);
+		return this.channel;
 	}
-	reset() {
+	resetTV () {
 		this.channel = 1;
 		this.volume = 50;
 	}
-	writeStatus() {
-		console.log(`${this.brand} at channel ${this.channel}, volume ${this.volume}`);
+	output () {
+		return console.log(`${this.brand} at channel ${this.channel}, volume ${this.volume}`);
 	}
-}
-
-let tvSet = new TV('Panasonic');
-tvSet.writeStatus();
-for (let i = 0; i < 55; i++) {
-	tvSet.decreaseVol();
-}
-tvSet.setChannel();
-tvSet.writeStatus();
-tvSet.reset();
-tvSet.writeStatus();
-
-
-
-
-*/
-
-/*
-class TV {
-    constructor (brand) {
-        this.brand = brand;
-        this.channel = 1;
-        this.volume = 50;
-        
-    }
-
-    inVolume () {
-        if (this.volume <= 100 && this.volume >= 0) {
-            return this.volume += 1;
-        }
-    }
-    deVolume () {
-        if (this.volume < 100 && this.volume > 0) {
-            return this.volume -= 1;
-        }
-    }
-    randomChannel () {
-        this.channel = Math.floor(Math.random() * Math.abs(50) - 1);
-        return this.channel;
-    }
-    resetTV () {
-        this.channel = 1;
-        this.volume = 50;
-    }
-    output () {
-        return console.log(`${this.brand} at channel ${this.channel}, volume ${this.volume}`);
-    }
 }
 
 const tvFunction = new TV("Sony");
 tvFunction.inVolume();
 tvFunction.inVolume();
 tvFunction.inVolume();
-tvFunction.inVolume();
-tvFunction.deVolume();
-tvFunction.deVolume();
 tvFunction.deVolume();
 tvFunction.deVolume();
 tvFunction.deVolume();
@@ -152,7 +108,7 @@ tvFunction.deVolume();
 tvFunction.deVolume();
 tvFunction.inVolume();
 tvFunction.randomChannel();
-// tvFunction.resetTV();
+//tvFunction.resetTV();
 tvFunction.output();
 */
 
