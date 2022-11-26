@@ -105,3 +105,65 @@ console.log(array2)
 
 
 
+/*
+
+class  Covek {
+    constructor (ime,prezime,godiste,rod){
+        (this.ime = ime),
+        (this.prezime = prezime),
+        (this.godiste = godiste),
+        (this.rod = rod)
+    }
+}
+
+
+const covek1 = new Covek ("Zerin","Mujezinovic",2003,"M")
+const covek2 = new Covek ("Dzejlana","Radoncic",2003,"Z")
+const covek3 = new Covek ("Muhamed","Gusinac",2005,"M")
+const covek4 = new Covek ("Daris","Omeragic",2006,"M")
+const covek5 = new Covek ("Merisa","Besirovic",2003,"Z")
+
+*/
+
+
+const array = [covek1,covek2,covek3,covek4,covek5];
+
+
+/*
+const arrayM = [];
+const arrayZ = [];
+
+for (i = 0 ; i < array.length ; i++){
+    if (array[i].godiste < 2004){
+        console.log(array[i])
+    }
+}
+
+for (let i = 0; i < array.length; i++) {
+    if (array[i].rod === "M"){
+        arrayM.push(array[i])
+    } else{
+        arrayZ.push(array[i])
+    }
+}
+console.log(arrayM)
+console.log(arrayZ)
+*/
+
+/*
+let Nums = [1,2,3,4,5,6];
+
+
+
+map1 = Nums.map(x => (x.toString()))
+
+
+console.log(map1)
+*/
+
+
+
+
+
+
+
