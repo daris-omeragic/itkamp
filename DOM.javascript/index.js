@@ -58,6 +58,70 @@ function changeColor(){
 
 
 
+/*
+
+
+// Nalazimo element po id-u
+document.getElementById("demo").innerHTML = "Hello world"
+
+
+// Nalazimo element po tagName odnosno ovaj paragraph je oznacen samo tagom p
+document.getElementsByTagName("p")
+
+//  Nalazimo element po clasi koju smo definisali
+const x = document.getElementsByClassName("intro").innerHTML = "daris"
+
+
+
+
+document.write(x)
+
+
+
+const z = document.querySelectorAll("p.div");
+
+
+
+document.write(z);
+
+
+*/
+
+/*
+
+const element = document.getElementById("id01");
+element.innerHTML = "New Heading";
+
+*/
+/*
+
+document.getElementById("demo").innerHTML = "Date : " + Date();
+
+*/
+
+
+
+
+/*
+
+document.write(Date())
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
