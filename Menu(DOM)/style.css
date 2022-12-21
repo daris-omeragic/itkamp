@@ -1,0 +1,130 @@
+body {
+    flex-wrap: wrap;
+}
+
+
+
+
+.menu-conteiner {
+    padding: 5rem 0;
+    padding-bottom: 0;
+}
+
+
+.tittle {
+    text-align: center;
+    color: hsl(209deg 61% 16%);
+    font-size: 20px;
+    letter-spacing: 2px;
+    line-height: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-bottom: 2rem;
+}
+
+
+.underline {
+    background-color: #c59d5f;
+    width: 4.5rem;
+    height: 4px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-conteiner {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+}
+
+
+.button {
+    font-size: 17px;
+    color: #c59d5f;
+    border-color: #c59d5f;
+    border-radius: 0.35rem;
+    cursor: pointer;
+    letter-spacing: 1px;
+    width: auto;
+    padding: 3px 7px 3px 7px;
+}
+
+
+
+
+.button:hover {
+    background-color: #c59d5f;
+    color: white;
+}
+
+
+
+.menu-conteiner-item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+    max-width: 100rem;
+    grid-template-rows: auto;
+    justify-items: center;
+}
+
+
+
+.grid-item {
+    display: grid;
+}
+
+
+.picture {
+    width: 230px;
+    height: 145px;
+    border-radius: 18px;
+    border: 5px solid #c59d5f;
+}
+
+
+.menu-item {
+    display: grid;
+    grid-template-columns: 225px 1fr;
+    gap: 0 1.25rem;
+    max-width: 40rem;
+}
+
+
+.conteiner-info {
+    display: flex;
+    flex-flow: wrap;
+    justify-content: space-between;
+    margin: auto;
+    width: 90%;
+}
+
+
+.item-header {
+    color: hsl(209deg 61% 16%);
+    border-bottom: 1px dotted grey;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    margin-bottom: 0;
+    margin-top: -10px;
+    width: 16rem;
+}
+
+.price {
+    color: #c59d5f;
+    margin: auto;
+    margin-top: -10px;
+    border-bottom: 1px dotted grey;
+}
+
+.text {
+    color: hsl(205deg 77% 27%);
+    opacity: 0.7;
+}
+
+
+body{
+    background: linear-gradient(80deg,rgba(	240,248,255),rgb(	169,169,169));
+}
