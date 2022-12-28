@@ -1,0 +1,49 @@
+#circle {
+    height: 25rem;
+    width: 25rem;
+    border-style: solid;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 17rem;
+}
+
+#clockface {
+    width: 20rem;
+    height: 20rem;
+    transform: translateY(0px);
+}
+
+
+
+#hour {
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    height: 8px;
+    transform: rotate(90deg);
+    transform-origin: 100%;
+    background: linear-gradient(to right, rgba(255, 0, 0, 0) 0%, rgba(255, 0, 0, 0) 40%, black 40%, black 100%);
+}
+
+#minute {
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    height: 6px;
+    transform: rotate(90deg);
+    transform-origin: 100%;
+    background: linear-gradient(to right, rgba(255, 0, 0, 0) 0%, rgba(255, 0, 0, 0) 10%, black 10%, black 100%);
+}
+
+#second {
+    position: absolute;
+    top: 50%;
+    width: 50%;
+    height: 3px;
+    transform: rotate(90deg);
+    transform-origin: 100%;
+    background-color: black;
+}
+
