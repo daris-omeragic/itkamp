@@ -1,0 +1,24 @@
+.first-div{
+    width: 20%;
+    height: 40vh;
+    background-color: blue;
+}
+
+.second-div{
+    width: 20%;
+    height: 40vh;
+    background-color: green;
+}
+
+.third-div{
+    width: 20%;
+    height: 40vh;
+    background-color:aqua;
+}
+
+
+.conteiner{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
