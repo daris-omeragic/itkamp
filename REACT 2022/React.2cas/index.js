@@ -1,23 +1,3 @@
-// Klase(Class) su izrada modela podataka unutar aplikacije (web ili bilo  koje druge)
-
-// Svaka klasa mora da uzima ima metodu constructor (){}, a ona vrsi funkciju 
-// glavne funkcije (metode) unutar klase
-
-// pomocu constructora metode se inicijaliziju glavni podaci unutar klase
-
-
-// inicijalizacija promenljivih i dodela vrednosti njima
-// vrsi se pomocu this metode (nprm this.name)
-
-
-// metode su funkcije unutar klase koje takodje mogu vrsiti incijalizaciju
-//promenljivih i obradu podataka
-
-// Svaka klasa MORA imati constructor metodu
-
-// Node je runtime koji vrsi egzekuciju i kompajlovanje javascript koda
-// Node ima mnostvo svojih modula,najpoznatiji us fs (fileSystem) i http modul
-
 
 
 /*

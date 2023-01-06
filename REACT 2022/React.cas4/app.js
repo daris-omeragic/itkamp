@@ -1,16 +1,4 @@
-// cd - change directory je komanda u terminalu
-// koja sluzii za navigiranje kroz foldere unutar sistema
 
-// ls - je komanda koja sluzi za islistavanje
-// fajlova i foldera unutar foldera
-
-
-// mkdir - make directroy je komanda koja sluzi za kreiranje novog direktorija ili foldera
-
-//Document
-//Object
-//Manipulation
-// I sluzi za manipulaciju elementima html-a kroz JS kod 
 
 // Name
 

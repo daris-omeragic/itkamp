@@ -1,6 +1,3 @@
-// const je skraceno od constant i njoj se vrednost ne menja
-// var je varijabla odnosno promenljiva
-// let je promenljiva unutar jednog bloka koda
 
 
 
@@ -16,8 +13,7 @@ randomFunction();
 
 
 
-//destrukturizacija objekata - object destruction
-// Razlagnje delova objekata na zasebne promenljive
+
 /*
 const randomObj = {
     name: "Elmaz",
@@ -51,16 +47,6 @@ if (newObj.age === 27) {
 
 // ternary operator
 //newObj.age === 27 ? console.log(newObj) : console.log("Error")
-
-
-// = inicijalizacija(dodela) vrednosti promenljivoj
-// == provera tacnosti
-// === provera tacnosti i tipa podataka
-
-
-// Class based components su komponente bazirane na klasama i metodama
-// =+ povecava i dodaje vrednost
-// ++ increment (dodaje za 1)
 
 //console.log(newObj);
 
