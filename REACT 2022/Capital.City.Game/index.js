@@ -145,7 +145,7 @@ for (const li of listItems) {
     });
 }
 
-resetButton = document.querySelector("#button-reset");
+const resetButton = document.querySelector("#button-reset");
 
 resetButton.addEventListener("click",()=>{
     currentQuestion = 
@@ -158,3 +158,7 @@ resetButton.addEventListener("click",()=>{
         li.innerHTML = `${li.innerHTML.split("<")[0]}<i class="fa-solid"></i>`;
     });
 });
+
+
+
+

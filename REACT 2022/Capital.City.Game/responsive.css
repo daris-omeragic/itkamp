@@ -1,0 +1,26 @@
+
+
+
+
+
+@media screen and (max-width : 380px) {
+    #picture{
+        max-width: 45vw;
+        max-height: 98px;
+    }
+    ul{
+        margin-top: 1.6rem;
+    }
+    ul li{
+        font-size: 15px;
+    }
+    #button{
+        margin-left: 1rem;
+        width: 160px;
+    }
+    #button-reset {
+        width: 90px;
+        margin-top: 1rem;
+        margin-left: 1rem
+    }
+}
