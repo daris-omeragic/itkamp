@@ -6,11 +6,10 @@ body{
 
 .page{
     position: relative;
-    width: 100%;
+    width: 85.5vw;
     height: 100%;
     left: 0;
     top: 0;
-    border: 1px solid black;
   
 }
 #right-side {
@@ -21,17 +20,29 @@ body{
     bottom: 0;
     width: 200px;
     height: 100vh;
+    z-index: 1;
+    background: linear-gradient(56deg,rgb(1, 3, 234),rgb(101, 105, 199));
 }
 
 
 #header{
     width: 150px;
-    height: 20px;
+    height: 30px;
     border: 1px solid black;
-    margin: 15px;
-    background-color:ghostwhite;
     color: black;
+    background-color: rgb(191, 255, 174);
+    margin: 20px;
 }
+
+#paragraph{
+    width: 150px;
+    height: 30px;
+    border: 1px solid black;
+    color: black;
+    background-color: rgb(191, 255, 174);
+    margin: 20px;
+}
+
 
 
 #button-add{
@@ -40,12 +51,27 @@ body{
     height: 25px;
     padding: 5px;
     margin: 0;
+    position: relative;
+    left: 70px;
+}
+
+#button-text{
+    cursor: pointer;
+    width: 50px;
+    height: 25px;
+    padding: 5px;
+    margin: 0;
+    position: relative;
+    left: 70px;
 }
 
 
 ::placeholder {
-    color: red;
     font-style: italic;
+    font-weight: bolder;
+    color: black;
+    opacity: 0.6;
+    text-align: center;
   }
   
 
@@ -53,5 +79,12 @@ body{
     cursor: pointer;
   }
 
+  
+.button-conteiner{
+    margin-top: 9rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 23px;
+}
 
 
