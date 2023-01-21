@@ -1,17 +1,16 @@
 .styledButton{
-    width: 180px;
+    width: 200px;
     height: 50px;
     color: white;
-    background-color: black;
+    background-color: rgb(28, 28, 255);
     border-radius: 10px;
+    font-size: 17px;
+    letter-spacing: 3px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     cursor: pointer;
-    font-size: 18px;
-    padding: 10px;
-    font-family:sans-serif;
 }
 
 .styledButton:hover{
-    background-color: rgba(0, 0, 0, 0.514);
-    font-size: 20px;
+    background-color: rgb(42, 42, 209);
+    font-size: 19px;
 }
-
