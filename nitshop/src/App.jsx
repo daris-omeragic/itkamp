@@ -1,39 +1,21 @@
-import React,{useState} from "react";
+import React from "react";
 import "./App.css";
-//import CustomForm from "./components/CustomForm/CustomForm";
-import StyledButton from "./components/StyledButton/StyledButton";
-import StyledInput from "./components/StyledInput/StyledInput";
+import CustomForm from "./components/CustomForm/CustomForm";
 import "./components/CustomForm/CustomForm.css"
 
 
 
-
-
-const CustomForm = () => {
-  const [name, setName] = useState("");
-  const [lastName, setLastName] = useState("");
-
-  function nameHandler(e) {
-    setName(e.target.value);
-  }
-
-  function lastNameHandler(e) {
-    setLastName(e.target.value);
-  }
-
+const App = () => {
   return (
-    <div id="div">
-      <StyledInput id = "input" onChangeHandler={nameHandler} value={name} />
-      <StyledInput onChangeHandler={lastNameHandler} value={lastName} />
-      <StyledButton innerText='Send' />
+    <div className='App'>
+      <header className='App-header'>
+        <CustomForm />
+      </header>
     </div>
   );
 };
 
-
-
-
-export default CustomForm;
+export default App;
 
 
 
