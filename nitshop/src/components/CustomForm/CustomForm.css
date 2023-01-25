@@ -7,5 +7,6 @@ input {
     border-radius: 7px;
     cursor: default;
     box-shadow: 4px 4px darkgray;
+    text-align: center;
 }
 

@@ -1,14 +1,63 @@
+import React from "react";
+import "./App.css";
+import ToDo from "./components/ToDo/ToDo";
+
+const App = () => {
+  return (
+    <>
+      <ToDo />
+    </>
+  );
+};
+
+export default App;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 import React, { useState } from "react";
 import "./App.css";
 import CustomForm from "./components/CustomForm/CustomForm";
 import "./components/CustomForm/CustomForm.css";
 import CustomDiv from "./components/CustomDiv/CustomDiv";
-
-
-
-
-
-
+*/
+/*
 const App = () => {
   const [fullName, setFullName] = useState("");
   function dataGrabber(name, lastName) {
@@ -28,8 +77,9 @@ const App = () => {
   );
 };
 
-export default App;
 
+export default App;
+*/
 
 
 

@@ -4,3 +4,19 @@
     left: 22rem;
 }
 
+input{
+    position: relative;
+    top: 10rem;
+    left: 10rem;
+    width: 250px;
+    height: 50px;
+    border: none;
+    background-color: rgb(237, 234, 234);
+    box-shadow: 2px 3px rgb(215, 213, 213);
+    text-align: center;
+}
+
+
+input:hover{
+    background-color: rgb(233, 233, 233);
+}
