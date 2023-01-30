@@ -8,12 +8,13 @@ function ToDo() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (input === "") return;
     setTodos([...todos, input]);
     setInput("");
   };
 
   const handleDelete = (index) => {
-    setTodos(todos.filter((todo, i) => i !== index)); 
+    setTodos(todos.filter((todo, i) => i !== index));
   };
 
   return (
