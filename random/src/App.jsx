@@ -7,7 +7,7 @@ import "./CustomDiv/Button.css"
 
 function App() {
   const [count, setCount] = useState(0);
-  const isDisabled = count <= 0 ? true : false 
+  const isDisabled = count <= 0 ? true : false ;
   return (
     <CustomDiv borderRadius={"15px"}>
       <button className='button' onClick={() => setCount(count + 1)}>

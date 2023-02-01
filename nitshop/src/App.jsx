@@ -1,12 +1,14 @@
 import React from "react";
 import "./App.css";
-import ToDo from "./components/ToDo/ToDo";
+//import ToDo from "./components/ToDo/ToDo";
+import GridCmp from "./components/Grid/Grid";
 //import Calculator from "./components/ToDo/ToDo";
+
 
 const App = () => {
   return (
     <>
-    <ToDo/>
+    <GridCmp></GridCmp>
     </>
   );
 };
