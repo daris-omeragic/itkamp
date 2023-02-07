@@ -1,20 +1,22 @@
+//import GridCmp from "./components/Grid/Grid";
+//import ToDo from "./components/ToDo/ToDo";
 import React from "react";
 import "./App.css";
-//import ToDo from "./components/ToDo/ToDo";
-import GridCmp from "./components/Grid/Grid";
-//import Calculator from "./components/ToDo/ToDo";
-
+import PrimaryButton from "./components/PrimaryButton/PrimaryButton";
+import StyledButton from "./components/StyledButton/StyledButton";
+//import StyledButton from "./components/StyledButton/StyledButton";
 
 const App = () => {
   return (
     <>
-    <GridCmp></GridCmp>
+      <PrimaryButton padding={60}>
+        Primary button
+      </PrimaryButton>
     </>
   );
 };
 
 export default App;
-
 
 
 

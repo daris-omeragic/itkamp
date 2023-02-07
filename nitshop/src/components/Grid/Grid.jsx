@@ -15,13 +15,13 @@ const GridCmp = () => {
         alignItems='flex-end'
       >
         <Grid className = "text" item xs={2}>
-          <CustomDiv  width='100%' >YouTube</CustomDiv>
+          <CustomDiv  width='100%' >xs=2</CustomDiv>
         </Grid>
         <Grid className="search" item xs={6}>
-          <CustomDiv width='100%'> <input className="input"placeholder="Pretražite"></input><button id="button"></button> </CustomDiv>
+          <CustomDiv width='100%'>xs=6</CustomDiv>
         </Grid>
         <Grid item xs={4}>
-          <CustomDiv width='100%'> <div className="circle"></div> </CustomDiv>
+          <CustomDiv width='100%'>xs=4 </CustomDiv>
         </Grid>
       </Grid>
       <Grid item xs={8} sm={12} md={12} lg={12} >
