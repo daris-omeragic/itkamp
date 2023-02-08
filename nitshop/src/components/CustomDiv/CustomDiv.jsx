@@ -10,7 +10,7 @@ const CustomDiv = ({
   padding,
   margin,
 }) => {
-  const divWidth = width ? width : 100;
+  const divWidth = width ? width : "100%";
   const divHeight = height ? height : 100;
   const divBR = borderRadius ? borderRadius : 0;
   const divBorder = border ? border : "1px solid black";

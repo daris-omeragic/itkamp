@@ -1,19 +1,13 @@
-//import GridCmp from "./components/Grid/Grid";
-//import ToDo from "./components/ToDo/ToDo";
 import React from "react";
 import "./App.css";
-import PrimaryButton from "./components/PrimaryButton/PrimaryButton";
-import StyledButton from "./components/StyledButton/StyledButton";
-//import StyledButton from "./components/StyledButton/StyledButton";
+import Navigation from "./Templates/Navigation/Navigation";
+
+
 
 const App = () => {
   return (
-    <>
-      <PrimaryButton padding={60}>
-        Primary button
-      </PrimaryButton>
-    </>
-  );
+    <Navigation></Navigation>
+  )
 };
 
 export default App;
