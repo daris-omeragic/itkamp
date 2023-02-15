@@ -7,10 +7,34 @@ import EmailIcon from "@mui/icons-material/Email";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import LinkedInIcon from '@mui/icons-material/LinkedIn';
-import PinterestIcon from '@mui/icons-material/Pinterest';
 import Text from "../../components/Text/Text";
 import { getScreenWidth } from "../../util/helpers";
+
+const SocialIcons = () => (
+  <>
+    <TwitterIcon
+      style={{
+        fontSize: fontSize.normal,
+        color: colors.gray,
+        margin: '0px 10px',
+      }}
+    />
+    <InstagramIcon
+      style={{
+        fontSize: fontSize.normal,
+        color: colors.gray,
+        margin: '0px 10px',
+      }}
+    />
+    <FacebookIcon
+      style={{
+        fontSize: fontSize.normal,
+        color: colors.gray,
+        margin: '0px 10px',
+      }}
+    />
+  </>
+)
 
 
 const TopRow = () => {
@@ -24,7 +48,7 @@ const TopRow = () => {
       display='flex'
       width='100%'
       height='30px'
-      padding='0px 5%'
+      padding='0px 10%'
       border='0px'
     >
       <Grid container direction='row'>
@@ -39,7 +63,7 @@ const TopRow = () => {
             <CustomDiv
               display='flex'
               alignItems='center'
-              margin='0px 0px 0px 5px'
+              margin='0px 0px 0px 15px'
             >
               <EmailIcon
                 style={{
@@ -55,35 +79,8 @@ const TopRow = () => {
             display='flex'
             alignItems='center'
             justifyContent='flex-end'
-            textAlign='right'
           >
-            <TwitterIcon
-              style={{
-                fontSize: fontSize.normal,
-                color: colors.gray,
-              }}
-            />
-            <InstagramIcon
-              style={{
-                fontSize: fontSize.normal,
-                color: colors.gray,
-              }}
-            />
-            <FacebookIcon
-              style={{
-                fontSize: fontSize.normal,
-                color: colors.gray,
-              }}
-            />
-            <LinkedInIcon style={{
-              fontSize: fontSize.normal,
-              color : colors.gray,
-            }}>
-            </LinkedInIcon>
-            <PinterestIcon style={{
-              fontSize :fontSize.normal,
-              color : colors.gray,
-            }}></PinterestIcon>
+            <SocialIcons />
           </CustomDiv>
         </Grid>
       </Grid>
