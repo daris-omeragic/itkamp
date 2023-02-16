@@ -19,6 +19,7 @@ padding-left: ${props => props.pl ? props.pl : '0px'};
 padding-right: ${props => props.pr ? props.pr : '0px'};
 padding-bottom: ${props => props.pb ? props.pb : '0px'};
 
+
 `;
 
 

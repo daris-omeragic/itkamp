@@ -6,9 +6,11 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
+import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import Text from "../../components/Text/Text";
 import { getScreenWidth } from "../../util/helpers";
+
+      
 
 const SocialIcons = () => (
   <>
@@ -26,7 +28,7 @@ const SocialIcons = () => (
         margin: '0px 10px',
       }}
     />
-    <FacebookIcon
+    <FacebookOutlinedIcon
       style={{
         fontSize: fontSize.normal,
         color: colors.gray,
@@ -57,9 +59,13 @@ const TopRow = () => {
             <PhoneIcon
               style={{
                 fontSize: fontSize.normal,
+                color: colors.gray,
               }}
             />
-            <Text fontSize={fontSize.small}>+38163333333</Text>
+            <Text style={{
+              color : colors.gray,
+              fontSize : fontSize.small,
+            }}>+38163333333</Text>
             <CustomDiv
               display='flex'
               alignItems='center'
@@ -68,9 +74,15 @@ const TopRow = () => {
               <EmailIcon
                 style={{
                   fontSize: fontSize.normal,
+                  color: colors.gray,
                 }}
               />
-              <Text fontSize={fontSize.small}>info@mail.com</Text>
+              <Text
+                style={{
+                  color: colors.gray,
+                  fontSize: fontSize.small,
+                }}
+              >info@mail.com</Text>
             </CustomDiv>
           </CustomDiv>
         </Grid>
