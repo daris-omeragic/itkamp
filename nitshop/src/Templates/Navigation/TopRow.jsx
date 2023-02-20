@@ -75,6 +75,7 @@ const TopRow = () => {
                 style={{
                   fontSize: fontSize.normal,
                   color: colors.gray,
+                  
                 }}
               />
               <Text
