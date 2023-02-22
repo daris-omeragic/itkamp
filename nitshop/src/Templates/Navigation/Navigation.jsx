@@ -3,6 +3,7 @@ import Grid from "@mui/material/Grid"
 //import CustomDiv from "../../components/CustomDiv/CustomDiv"
 import TopRow from "./TopRow"
 import MainBar from "./MainBar"
+import LinkBar from './LinkBar';
 
 
 const Navigation = () => {
@@ -10,6 +11,7 @@ const Navigation = () => {
         <Grid container direction="row">
             <TopRow/>
             <MainBar/>
+            <LinkBar/>
         </Grid>
     );
 }
