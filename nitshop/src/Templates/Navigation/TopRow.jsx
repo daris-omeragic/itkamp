@@ -8,13 +8,12 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import Text from "../../components/Text/Text";
-import { getScreenWidth } from "../../util/helpers";
-
+import { getScreenWidth } from "../../util/helpers"; 
       
 
 const SocialIcons = () => (
   <>
-    <TwitterIcon
+    <TwitterIcon className="twiter" 
       style={{
         fontSize: fontSize.normal,
         color: colors.gray,
