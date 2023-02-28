@@ -21,8 +21,9 @@ const sliders = [
   },
 ];
 
+const deviceWidth = getScreenWidth();
+
 const Slider = () => {
-  const deviceWidth = getScreenWidth();
 
   const setSliderMargin =
     deviceWidth === "SM"

@@ -1,6 +1,6 @@
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel as SliderCarousel } from "react-responsive-carousel";
-import { fontSize,colors } from "../../util/theme"
+import { fontSize, colors } from "../../util/theme"
 import Text from "../Text/Text"
 import SimplifiedDiv from "../SimplifiedDiv/SimplifiedDiv";
 
@@ -25,15 +25,16 @@ const Carousel = ({ data }) => {
       showIndicators
       infiniteLoop
       showStatus={false}
-      showArrows = {false}
+      showArrows={false}
       swipeable
+
     >
       {data.map((d) => (
         <div key={d} style={{ height: '400px' }}>
           <img src={d.imgSrc}
             style={{ height: '100%', objectFit: 'contain' }} />
           <SimplifiedDiv style={styles.carouselText}>
-            <Text fontSize={fontSize.xLarge}color = {colors.gray}> {d.imgText}</Text>
+            <Text fontSize={fontSize.xLarge} color={colors.gray}> {d.imgText}</Text>
           </SimplifiedDiv>
         </div>
       ))}
