@@ -31,8 +31,11 @@ const Carousel = ({ data }) => {
     >
       {data.map((d) => (
         <div key={d} style={{ height: '400px' }}>
-          <img src={d.imgSrc}
-            style={{ height: '100%', objectFit: 'contain' }} />
+          <img
+            src={d.imgSrc}
+            style={{ height: "100%", objectFit: "contain" }}
+            alt={d.imgText}
+          />
           <SimplifiedDiv style={styles.carouselText}>
             <Text fontSize={fontSize.xLarge} color={colors.gray}> {d.imgText}</Text>
           </SimplifiedDiv>
@@ -41,6 +44,7 @@ const Carousel = ({ data }) => {
     </SliderCarousel>
   );
 };
+
 
 
 export default Carousel;

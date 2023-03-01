@@ -8,12 +8,13 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
 import Text from "../../components/Text/Text";
-import { getScreenWidth } from "../../util/helpers"; 
-      
+import { getScreenWidth } from "../../util/helpers";
+import SimplifiedDiv from "../../components/SimplifiedDiv/SimplifiedDiv";
+
 
 const SocialIcons = () => (
   <>
-    <TwitterIcon className="twiter" 
+    <TwitterIcon className="twiter"
       style={{
         fontSize: fontSize.normal,
         color: colors.gray,
@@ -40,21 +41,31 @@ const SocialIcons = () => (
 
 const TopRow = () => {
   const screenWidth = getScreenWidth();
-
   console.log(screenWidth);
+
+
+  const alignItemsInFirstDiv = screenWidth === "SM" ? "center" : 'flex-start';
+  const alignItemsInSecondDiv = screenWidth === "SM" ? "center" : 'flex-end';
+  const paddingInDiv = screenWidth === "SM" ? "10px 0px" : '0px';
+  const TopDivHeight = screenWidth === "SM" ? "auto" : '30px';
 
   return (
     <CustomDiv
       bgColor={colors.secondColor}
       display='flex'
+      height={TopDivHeight}
       width='100%'
-      height='30px'
       padding='0px 10%'
       border='0px'
     >
       <Grid container direction='row'>
-        <Grid item md={6} lg={6}>
-          <CustomDiv display='flex' alignItems='center'>
+        <Grid item xs={12} sm={12} md={6} lg={6}>
+          <CustomDiv
+            display='flex'
+            alignItems='center'
+            justifyContent={alignItemsInFirstDiv}
+            padding={paddingInDiv}
+          >
             <PhoneIcon
               style={{
                 fontSize: fontSize.normal,
@@ -62,8 +73,8 @@ const TopRow = () => {
               }}
             />
             <Text style={{
-              color : colors.gray,
-              fontSize : fontSize.small,
+              color: colors.gray,
+              fontSize: fontSize.small,
             }}>+38163333333</Text>
             <CustomDiv
               display='flex'
@@ -74,7 +85,7 @@ const TopRow = () => {
                 style={{
                   fontSize: fontSize.normal,
                   color: colors.gray,
-                  
+
                 }}
               />
               <Text
@@ -86,11 +97,11 @@ const TopRow = () => {
             </CustomDiv>
           </CustomDiv>
         </Grid>
-        <Grid item md={6} lg={6}>
+        <Grid item xs={12} sm={12} md={6} lg={6}>
           <CustomDiv
             display='flex'
             alignItems='center'
-            justifyContent='flex-end'
+            justifyContent={alignItemsInSecondDiv}
           >
             <SocialIcons />
           </CustomDiv>
