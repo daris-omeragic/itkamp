@@ -37,8 +37,8 @@ const Slider = () => {
 
   const styles = {
     sliderContainer: {
-      width: "100%",
-      height: "200px",
+      width: "80%",
+      height: "auto",
       paddingTop: setPaddingTop,
       margin: setSliderMargin,
     },
