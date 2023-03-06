@@ -6,8 +6,8 @@ import Slider from "./Templates/Slider/Slider";
 const App = () => {
   return (
     <>
-    <Navigation/>
-    <Slider/>
+      <Navigation/>
+      <Slider/>
     </>
   )
 };
