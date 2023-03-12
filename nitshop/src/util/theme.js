@@ -3,7 +3,7 @@ export const colors = {
     secondColor: '#F0F0E9',
     gray : '#828181',
     lightGray : '#b3b1b1',
-    lightBlack : '#2e2d2d',
+    lightBlack : '#363432',
     black : 'black',
     limeGreen : '#9de848',
     lightRed: '#f23f35',
@@ -29,6 +29,7 @@ export const fontSize = {
     normal: '16px',
     medium: '18px',
     large: '24px',
+    largeG : '30px',
     xLarge: '36px',
 };
 

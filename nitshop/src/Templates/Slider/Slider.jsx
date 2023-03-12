@@ -6,18 +6,19 @@ import SimplifiedDiv from "../../components/SimplifiedDiv/SimplifiedDiv";
 import { Grid } from "@mui/material";
 import { getScreenWidth } from "../../util/helpers";
 
+
 const sliders = [
   {
     imgSrc: girl1,
-    imgText: "Zaova 1",
+    imgText: "E-SHOPPER",
   },
   {
     imgSrc: girl2,
-    imgText: "Svekrva 2",
+    imgText: "E-SHOPPER",
   },
   {
     imgSrc: girl3,
-    imgText: "Snaha 3",
+    imgText: "E-SHOPPER",
   },
 ];
 
@@ -35,6 +36,9 @@ const Slider = () => {
     deviceWidth === "SM" ? "10px" : deviceWidth === "MD" ? "20px" : "30px";
 
   const sliderWidthSM = deviceWidth !== "LG" ? "100%" : "80%";
+
+  
+
 
   const styles = {
     sliderContainer: {
