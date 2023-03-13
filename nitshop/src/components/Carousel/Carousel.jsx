@@ -1,8 +1,9 @@
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import { Carousel as SliderCarousel } from "react-responsive-carousel";
-import Text from "../Text/Text";
+import React from "react";
 import SimplifiedDiv from "../SimplifiedDiv/SimplifiedDiv";
-import { colors, fontSize, fontWeight } from "../../util/theme";
+import Text from "../../components/Text/Text";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel as SliderCarousel } from "react-responsive-carousel";
+import { fontSize, fontWeight, colors } from "../../util/theme";
 import { getScreenWidth } from "../../util/helpers";
 
 const Carousel = ({ data }) => {
@@ -36,47 +37,76 @@ const Carousel = ({ data }) => {
       showArrows={false}
       swipeable
     >
-      {data.map((d) => (
-        <div key={d} style={{ width: "100%", height: "400px" }}>
-          <SimplifiedDiv style={{ position: "relative" }}>
+      {data.map((d, index) => (
+        <div key={index} style={{ width: "100%", height: "400px" }}>
+          <SimplifiedDiv>
             <Text
               fontSize={fontSize.largeG}
               color={colors.accentColor}
               textAlign="start"
-              margin = '0px 30px'
+              margin="10px 30px"
             >
               E-SHOPPER
             </Text>
-            <Text
-              fontSize='20px'
-              color={colors.lightBlack}
-              textAlign="start"
-              margin = '0px 30px'
-              fontWeight = {fontWeight.mediumBold}
-            
-            >
-              Free E-Commerce Template
-            </Text>
-            <Text
-              fontSize={fontSize.normal}
-              color={colors.lightBlack}
-              textAlign="start"
-              margin = '25px 30px'
-              letterSpacing = '0.2px'
-            >
-             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </Text>
+            {index === 1 ? (
+              <div>
+                <Text
+                  fontSize="20px"
+                  color={colors.lightBlack}
+                  textAlign="start"
+                  margin="0px 30px"
+                  fontWeight={fontWeight.mediumBold}
+                >
+                  100% Responsive Design
+                </Text>
+                <Text
+                  fontSize={fontSize.normal}
+                  color={colors.lightBlack}
+                  textAlign="start"
+                  margin="25px 30px"
+                  letterSpacing="0.2px"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua.
+                </Text>
+              </div>
+            ) : (
+              <>
+                <Text
+                  fontSize="20px"
+                  color={colors.lightBlack}
+                  textAlign="start"
+                  margin="0px 30px"
+                  fontWeight={fontWeight.mediumBold}
+                >
+                  Free E-Commerce Template
+                </Text>
+                <Text
+                  fontSize={fontSize.normal}
+                  color={colors.lightBlack}
+                  textAlign="start"
+                  margin="25px 30px"
+                  letterSpacing="0.2px"
+                >
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua.
+                </Text>
+              </>
+            )}
           </SimplifiedDiv>
           <img
             src={d.imgSrc}
-            style={{ width: "100%", height: "calc(100% - 100px)", objectFit: "contain" }}
+            style={{
+              maxWidth: "100%",
+              maxHeight: "100%",
+              height: "auto",
+              objectFit: "contain",
+            }}
             alt={d.imgText}
           />
           <SimplifiedDiv
             style={smallScreen ? styles.carouselTextSmallScreen : styles.carouselText}
-          >
-
-          </SimplifiedDiv>
+          ></SimplifiedDiv>
         </div>
       ))}
     </SliderCarousel>
@@ -84,3 +114,8 @@ const Carousel = ({ data }) => {
 };
 
 export default Carousel;
+
+
+
+
+

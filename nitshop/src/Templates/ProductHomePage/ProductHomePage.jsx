@@ -4,6 +4,8 @@ import SimplifiedDiv from "../../components/SimplifiedDiv/SimplifiedDiv";
 import Text from "../../components/Text/Text";
 import CategoryTab from "../CategoryTab/CategoryTab";
 import { colors, fontSize, fontWeight } from "../../util/theme";
+import ArticleCard from "../ArticleCard/ArticleCard";
+import ArticlesHomePage from "../ArticlesHomePage/ArticlesHomePage";
 
 const styles = {
   container: {
@@ -37,6 +39,7 @@ const ProductsHomePage = () => {
           <SimplifiedDiv style={styles.headingContainer}>
             <Text style={styles.headingText}>Articles</Text>
           </SimplifiedDiv>
+            <ArticlesHomePage />
         </Grid>
       </Grid>
     </SimplifiedDiv>
