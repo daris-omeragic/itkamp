@@ -89,6 +89,7 @@ const CategoryTab = () => {
       borderRadius: "2px",
       textAlign: "left",
       padding: "15px 20px",
+      cursor : 'pointer',
     },
     category: {
       padding: "5px 0px",
