@@ -4,8 +4,8 @@ import SimplifiedDiv from "../../components/SimplifiedDiv/SimplifiedDiv";
 import Text from "../../components/Text/Text";
 import CategoryTab from "../CategoryTab/CategoryTab";
 import { colors, fontSize, fontWeight } from "../../util/theme";
-import ArticleCard from "../ArticleCard/ArticleCard";
 import ArticlesHomePage from "../ArticlesHomePage/ArticlesHomePage";
+import SuggestedCarousel from "../SuggestedCarousel/SuggestedCarousel";
 
 const styles = {
   container: {
@@ -16,7 +16,7 @@ const styles = {
     display: "flex",
     width: "100%",
     justifyContent: "center",
-    padding: "10px 0px",
+    padding: "20px 0px",
   },
   headingText: {
     fontSize: fontSize.medium,
@@ -39,7 +39,11 @@ const ProductsHomePage = () => {
           <SimplifiedDiv style={styles.headingContainer}>
             <Text style={styles.headingText}>Articles</Text>
           </SimplifiedDiv>
-            <ArticlesHomePage />
+          <ArticlesHomePage />
+          <SimplifiedDiv style={styles.headingContainer}>
+            <Text style={styles.headingText}>Suggested articles</Text>
+          </SimplifiedDiv>
+          <SuggestedCarousel />
         </Grid>
       </Grid>
     </SimplifiedDiv>

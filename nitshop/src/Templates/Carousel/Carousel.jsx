@@ -1,5 +1,5 @@
 import React from "react";
-import SimplifiedDiv from "../SimplifiedDiv/SimplifiedDiv";
+import SimplifiedDiv from "../../components/SimplifiedDiv/SimplifiedDiv";
 import Text from "../../components/Text/Text";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel as SliderCarousel } from "react-responsive-carousel";
@@ -31,13 +31,13 @@ const Carousel = ({ data }) => {
       showIndicators
       showThumbs={false}
       interval={1000}
-      autoPlay
       infiniteLoop
       showStatus={false}
       showArrows={false}
       swipeable
     >
       {data.map((d, index) => (
+        
         <div key={index} style={{ width: "100%", height: "400px" }}>
           <SimplifiedDiv>
             <Text

@@ -33,7 +33,7 @@ const ArticleCard = ({ title, description, image, price, onShowMore }) => {
         },
         shhopingCartIcon: {
             fontSize: fontSize.normal,
-            margin : '0px 3px',
+            margin: '0px 3px',
         },
     }
     const altTag = title !== '' ? title : 'Article image';
@@ -43,7 +43,7 @@ const ArticleCard = ({ title, description, image, price, onShowMore }) => {
                 <img src={image} style={styles.image} alt={altTag} />
             </SimplifiedDiv>
             <SimplifiedDiv style={styles.descriptionContainer}>
-                <Text color={colors.accentColor} fontSize={fontSize.large} fontWeight = {fontWeight.mediumBold}>{price}</Text>
+                <Text color={colors.accentColor} fontSize={fontSize.large} fontWeight={fontWeight.mediumBold}>{price}</Text>
                 <Text fontSize={fontSize.medium}>{title}</Text>
                 <Text fontSize={fontSize.optimal} color={colors.lightBlack}>{description.length > 70 ? description.slice(0, 70) + "..." : description}</Text>
             </SimplifiedDiv>

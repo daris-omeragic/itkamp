@@ -1,4 +1,4 @@
-import Carousel from "../../components/Carousel/Carousel";
+import Carousel from "../Carousel/Carousel";
 import girl1 from "../../assets/images/home/girl1.jpg";
 import girl2 from "../../assets/images/home/girl2.jpg";
 import girl3 from "../../assets/images/home/girl3.jpg";

@@ -4,6 +4,7 @@ import Navigation from "./Templates/Navigation/Navigation";
 import Slider from "./Templates/Slider/Slider";
 import ProductHomePage from "./Templates/ProductHomePage/ProductHomePage";
 
+
 const App = () => {
   return (
     <>
