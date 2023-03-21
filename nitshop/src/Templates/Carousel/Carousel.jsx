@@ -1,14 +1,11 @@
-import React from "react";
-import SimplifiedDiv from "../../components/SimplifiedDiv/SimplifiedDiv";
-import Text from "../../components/Text/Text";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel as SliderCarousel } from "react-responsive-carousel";
-import { fontSize, fontWeight, colors } from "../../util/theme";
-import { getScreenWidth } from "../../util/helpers";
+import Text from "../../components/Text/Text";
+import { colors, fontFamily, fontSize } from "../../util/theme";
+import SimplifiedDiv from "../../components/SimplifiedDiv/SimplifiedDiv";
+
 
 const Carousel = ({ data }) => {
-  const deviceWidth = getScreenWidth();
-  const smallScreen = deviceWidth === "SM" ? true : false;
   const styles = {
     carouselText: {
       position: "absolute",
@@ -16,97 +13,46 @@ const Carousel = ({ data }) => {
       left: 10,
       right: 10,
     },
-    carouselTextSmallScreen: {
-      position: "absolute",
-      top: 0,
-      left: 0,
-      right: 0,
-    },
   };
 
   return (
     <SliderCarousel
-      width="100%"
-      axis="horizontal"
+      width='100%'
+      axis='horizontal'
       showIndicators
       showThumbs={false}
       interval={1000}
+      autoPlay
       infiniteLoop
       showStatus={false}
       showArrows={false}
       swipeable
     >
-      {data.map((d, index) => (
-        
-        <div key={index} style={{ width: "100%", height: "400px" }}>
-          <SimplifiedDiv>
-            <Text
-              fontSize={fontSize.largeG}
-              color={colors.accentColor}
-              textAlign="start"
-              margin="10px 30px"
-            >
-              E-SHOPPER
-            </Text>
-            {index === 1 ? (
-              <div>
-                <Text
-                  fontSize="20px"
-                  color={colors.lightBlack}
-                  textAlign="start"
-                  margin="0px 30px"
-                  fontWeight={fontWeight.mediumBold}
-                >
-                  100% Responsive Design
-                </Text>
-                <Text
-                  fontSize={fontSize.normal}
-                  color={colors.lightBlack}
-                  textAlign="start"
-                  margin="25px 30px"
-                  letterSpacing="0.2px"
-                >
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua.
-                </Text>
-              </div>
-            ) : (
-              <>
-                <Text
-                  fontSize="20px"
-                  color={colors.lightBlack}
-                  textAlign="start"
-                  margin="0px 30px"
-                  fontWeight={fontWeight.mediumBold}
-                >
-                  Free E-Commerce Template
-                </Text>
-                <Text
-                  fontSize={fontSize.normal}
-                  color={colors.lightBlack}
-                  textAlign="start"
-                  margin="25px 30px"
-                  letterSpacing="0.2px"
-                >
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                  tempor incididunt ut labore et dolore magna aliqua.
-                </Text>
-              </>
-            )}
-          </SimplifiedDiv>
+      {data.map((d) => (
+        <div key={d} style={{ width: "100%", height: "400px" }}>
           <img
             src={d.imgSrc}
-            style={{
-              maxWidth: "100%",
-              maxHeight: "100%",
-              height: "auto",
-              objectFit: "contain",
-            }}
+            style={{ width: "100%", height: "100%", objectFit: "contain" }}
             alt={d.imgText}
           />
-          <SimplifiedDiv
-            style={smallScreen ? styles.carouselTextSmallScreen : styles.carouselText}
-          ></SimplifiedDiv>
+          <SimplifiedDiv style={styles.carouselText}>
+            <Text
+              fontFamily={fontFamily.LatoRegular}
+              fontSize={fontSize.xLarge}
+              color={colors.accentColor}
+              textAlign='left'
+            >
+              {d.imgText}
+            </Text>
+            <Text
+              fontFamily={fontFamily.LatoRegular}
+              fontSize={fontSize.large}
+              color={colors.gray}
+              textAlign='left'
+            >
+              {d.imgText}
+            </Text>
+          </SimplifiedDiv>
         </div>
       ))}
     </SliderCarousel>
@@ -114,7 +60,6 @@ const Carousel = ({ data }) => {
 };
 
 export default Carousel;
-
 
 
 
