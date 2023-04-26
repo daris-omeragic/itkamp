@@ -24,6 +24,9 @@ import "./assets/fonts/Montserrat-ExtraLight.ttf";
 import {createBrowserRouter,RouterProvider,} from "react-router-dom";
 import HomePageScreen from "./Screens/HomePageScreen/HomePageScreen";
 import ShopScreen from "./Screens/ShopScreen/ShopScreen";
+import { BlogScreen } from "./Screens/BlogScreen/BlogScreen";
+import { AboutScreen } from "./Screens/AboutScreen/AboutScreen";
+import { ContactScreen } from "./Screens/ContactScreen/ContactScreen";
 
 
 
@@ -37,6 +40,18 @@ const App = () => {
     {
       path : "/shop",
       element : <ShopScreen/>
+    },
+    {
+      path : "/blog",
+      element :<BlogScreen/>
+    },
+    {
+      path : "/about",
+      element : <AboutScreen/>
+    },
+    {
+      path : "/contact",
+      element : <ContactScreen/>
     },
   ]);
   return (
