@@ -27,6 +27,7 @@ import ShopScreen from "./Screens/ShopScreen/ShopScreen";
 import { BlogScreen } from "./Screens/BlogScreen/BlogScreen";
 import { AboutScreen } from "./Screens/AboutScreen/AboutScreen";
 import { ContactScreen } from "./Screens/ContactScreen/ContactScreen";
+import { CartScreen } from "./Screens/CartScreen/CartScreen";
 
 
 
@@ -52,6 +53,10 @@ const App = () => {
     {
       path : "/contact",
       element : <ContactScreen/>
+    },
+    {
+      path : "/cart",
+      element : <CartScreen/>
     },
   ]);
   return (
