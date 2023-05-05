@@ -22,6 +22,7 @@ const SuggestedCarousel = () => {
         centerMode
         autoPlay
         centerSlidePercentage={33}
+        showThumbs={false}
       >
         {articles.map((article, index) => (
           <SimplifiedDiv style={styles.articleCardHolder}>

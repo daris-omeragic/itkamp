@@ -1,13 +1,18 @@
-import React from 'react'
-import Navigation from '../../Templates/Navigation/Navigation'
+import React, { useContext } from "react";
+import Navigation from "../../Templates/Navigation/Navigation";
+import { CartContext } from "../../context/CartContext";
 
+const ShopScreen = () => {
+  const { items } = useContext(CartContext);
 
-const ShopScreen = () =>{
-    return(
-        <>
-        <Navigation/>
-        </>
-    )
-}
+  console.log(items);
 
-export default ShopScreen
+  return (
+    <>
+      <Navigation />
+      <div>ShopScreen</div>
+    </>
+  );
+};
+
+export default ShopScreen;

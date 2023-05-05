@@ -42,7 +42,10 @@ const CartPage = () => {
             color: colors.white,
             fontWeight: fontWeight.bold,
             cursor: 'pointer',
-            margin : '0px 10px'
+            margin : '0px 10px',
+            width : '30px',
+            height : '35px',
+        
         },
         inputStyle: {
             width: '23px',
