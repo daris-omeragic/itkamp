@@ -89,7 +89,7 @@ const CartPage = () => {
                 <Grid item lg={2}>
                     Price
                 </Grid>
-                <Grid item lg={2}>
+                <Grid item lg={2} style={{position : 'relative',left : '35px'}}>
                     Quantity
                 </Grid>
                 <Grid item lg={2}>
