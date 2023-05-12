@@ -1,16 +1,19 @@
 import React, { useContext } from "react";
-import Navigation from "../../Templates/Navigation/Navigation";
+import { UserContext } from "../../context/UserContext";
 import { CartContext } from "../../context/CartContext";
 
-const ShopScreen = () => {
-  const { items } = useContext(CartContext);
 
-  console.log(items);
+
+const ShopScreen = () => {
+  
+  const { items } = useContext(CartContext);
+  const { userDetails } = useContext(UserContext);
 
   return (
     <>
-      <Navigation />
-      <div>ShopScreen</div>
+     <div>{JSON.stringify(userDetails)}</div>
+     <div>{userDetails.name}</div>
+    <div>{userDetails.lastName}</div>
     </>
   );
 };

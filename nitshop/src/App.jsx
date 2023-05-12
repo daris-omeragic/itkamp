@@ -21,7 +21,7 @@ import "./assets/fonts/Montserrat-ExtraLight.ttf";
 
 
 
-import {createBrowserRouter,RouterProvider,} from "react-router-dom";
+import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 import HomePageScreen from "./Screens/HomePageScreen/HomePageScreen";
 import ShopScreen from "./Screens/ShopScreen/ShopScreen";
 import { BlogScreen } from "./Screens/BlogScreen/BlogScreen";
@@ -29,6 +29,8 @@ import { AboutScreen } from "./Screens/AboutScreen/AboutScreen";
 import { ContactScreen } from "./Screens/ContactScreen/ContactScreen";
 import { CartScreen } from "./Screens/CartScreen/CartScreen";
 import CartContextProvider, { CartContext } from "./context/CartContext";
+import UserContextProvider from "./context/UserContext";
+
 
 
 
@@ -37,33 +39,37 @@ const App = () => {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <HomePageScreen/>,
+      element: <HomePageScreen />,
     },
     {
-      path : "/shop",
-      element : <ShopScreen/>
+      path: "/shop",
+      element: <ShopScreen />
     },
     {
-      path : "/blog",
-      element :<BlogScreen/>
+      path: "/blog",
+      element: <BlogScreen />
     },
     {
-      path : "/about",
-      element : <AboutScreen/>
+      path: "/about",
+      element: <AboutScreen />
     },
     {
-      path : "/contact",
-      element : <ContactScreen/>
+      path: "/contact",
+      element: <ContactScreen />
     },
     {
-      path : "/cart",
-      element : <CartScreen/>
+      path: "/cart",
+      element: <CartScreen />
     },
   ]);
   return (
-    <CartContextProvider>
-    <RouterProvider router={router} />
-  </CartContextProvider>
+    <>
+      <UserContextProvider>
+        <CartContextProvider>
+          <RouterProvider router={router} />
+        </CartContextProvider>
+      </UserContextProvider>
+    </>
   );
 };
 
