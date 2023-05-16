@@ -69,7 +69,6 @@ const ArticlesHomePage = () => {
   const { items, setItems } = useContext(CartContext);
   const { setUserDetails } = useContext(UserContext);
 
-  setUserDetails({ name: "Daris", lastName: "Omeragic" });
 
   function addArticleHandler(article) {
     let existingIndex = items.findIndex((item) => item.id === article.id);

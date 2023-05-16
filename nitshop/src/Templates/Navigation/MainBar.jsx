@@ -78,17 +78,20 @@ const MainBar = () => {
           </span>
         </CustomDiv>
       </Link>
+      <Link to='/login'>
 
-      <CustomDiv display='flex' margin={rightmenuItemsMargin}>
-        <LockIcon style={iconStyle} />
-        <Text
-          fontFamily={fontFamily.LatoRegular}
-          fontSize={fontSize.smallPlus}
-          color={colors.gray}
-        >
-          Login
-        </Text>
-      </CustomDiv>
+        <CustomDiv display='flex' margin={rightmenuItemsMargin}>
+          <LockIcon style={iconStyle} />
+          <Text
+            fontFamily={fontFamily.LatoRegular}
+            fontSize={fontSize.smallPlus}
+            color={colors.gray}
+          >
+            Login
+          </Text>
+        </CustomDiv>
+      </Link>
+
     </CustomDiv>
   );
 
