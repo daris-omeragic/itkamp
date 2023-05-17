@@ -79,7 +79,6 @@ const MainBar = () => {
         </CustomDiv>
       </Link>
       <Link to='/login'>
-
         <CustomDiv display='flex' margin={rightmenuItemsMargin}>
           <LockIcon style={iconStyle} />
           <Text
@@ -91,7 +90,6 @@ const MainBar = () => {
           </Text>
         </CustomDiv>
       </Link>
-
     </CustomDiv>
   );
 
