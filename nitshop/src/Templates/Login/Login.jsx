@@ -91,7 +91,7 @@ const Login = () => {
           <input
             style={styles.inputStyle}
             type="password"
-            placeholder="password"
+            placeholder="Password"
             required
           />
           <SimplifiedDiv style={styles.checkboxWrapper}>
