@@ -1,10 +1,11 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import SimplifiedDiv from '../../components/SimplifiedDiv/SimplifiedDiv';
 import Text from '../../components/Text/Text';
 import { Grid } from '@mui/material';
-import { colors, fontFamily, fontSize, fontWeight } from '../../util/theme';
+import { colors, fontSize } from '../../util/theme';
 import PrimaryButton from '../../components/PrimaryButton/PrimaryButton';
 import { UserContext } from '../../context/UserContext';
+import { fetchAllUsers } from '../../api/userApi';
 
 const Login = () => {
   const styles = {
@@ -57,7 +58,25 @@ const Login = () => {
       flexDirection: "column",
     },
   };
+
+  const [users, setUsers] = useState([]);
+
   const { userDetails, setUserDetails } = useContext(UserContext);
+
+
+  useEffect(() => {
+    let mount = false;
+    if (mount) return;
+    fetchAllUsers().then((allUsers) => {
+      setUsers(allUsers);
+      mount = true;
+    })
+  }, []);
+  console.log('user',users);
+
+  
+
+
 
   const submitHandler = (e) => {
     e.preventDefault();
