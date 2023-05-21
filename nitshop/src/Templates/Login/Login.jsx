@@ -61,26 +61,26 @@ const Login = () => {
 
   const [users, setUsers] = useState([]);
 
-  const { userDetails, setUserDetails } = useContext(UserContext);
-
-
+  const { user, setUser } = useContext(UserContext);
   useEffect(() => {
-    let mount = false;
-    if (mount) return;
+    let mount = true;
+
     fetchAllUsers().then((allUsers) => {
-      setUsers(allUsers);
-      mount = true;
-    })
+      if (mount) {
+        setUsers(allUsers);
+      }
+    });
+
+    return () => {
+      mount = false;
+    };
   }, []);
-  console.log('user',users);
-
-  
-
+  console.log(users);
 
 
   const submitHandler = (e) => {
     e.preventDefault();
-    setUserDetails({
+    setUser({
       name: e.target[0].value,
       email: e.target[1].value,
       password: e.target[2].value,
@@ -89,59 +89,82 @@ const Login = () => {
 
   const loginHandler = (e) => {
     e.preventDefault();
-    if (userDetails.email !== e.target[0].value) return;
-    if (userDetails.password !== e.target[1].value) return;
-    console.log('logged in!')
-  }
+  
+    const enteredName = e.target[0].value;
+    const enteredEmail = e.target[1].value;
+  
+    const loggedInUser = users.find((user) => user.name === enteredName && user.email === enteredEmail);
+  
+    if (loggedInUser) {
+      setUser({
+        name: loggedInUser.name,
+        email: loggedInUser.email,
+      });
+  
+      console.log('Logged in!');
+    } else {
+      console.log('Invalid credentials!');
+    }
+  };
+
+  const userNamesAndEmails = users.map((user) => {
+    return {
+      name: user.name,
+      email: user.email,
+    };
+  });
+  
+  console.log(userNamesAndEmails);
+  
 
 
-  console.log(userDetails)
+
   return (
-    <Grid lg={12} style={styles.mainDiv} container item>
-      <Grid lg={5} display="flex" flexDirection="column">
+    <Grid item lg={12} style={styles.mainDiv} container>
+      <Grid item lg={5} md={5} display='flex' flexDirection='column'>
         <form onSubmit={loginHandler} style={styles.formStyle}>
           <Text style={styles.textStyle}>Login to your acoount</Text>
           <input
             style={styles.inputStyle}
-            type="mail"
-            placeholder="E-mail"
+            type='text'
+            placeholder='Name'
             required
           />
           <input
             style={styles.inputStyle}
-            type="password"
-            placeholder="Password"
+            type='email'
+            placeholder='Email'
             required
           />
           <SimplifiedDiv style={styles.checkboxWrapper}>
-            <input type="checkbox" />
-            <Text style={{ fontSize: fontSize.optimal }}>Keep me signed in</Text>
+            <input type='checkbox' />
+            <Text>Keep me signed in</Text>
           </SimplifiedDiv>
           <PrimaryButton style={styles.buttonStyle}>Login</PrimaryButton>
         </form>
       </Grid>
-      <Grid lg={2} display="flex">
+      <Grid item lg={2} display='flex'>
         <div style={styles.roundDiv}>OR</div>
       </Grid>
-      <Grid lg={5} display="flex" flexDirection="column">
+      <Grid item lg={5} display='flex' flexDirection='column'>
         <Text style={styles.textStyle}>New User Signup!</Text>
         <form onSubmit={submitHandler} style={styles.formStyle}>
           <input
             style={styles.inputStyle}
-            type="text"
-            placeholder="Name"
+            type='text'
+            placeholder='Name'
             required
           />
           <input
             style={styles.inputStyle}
-            type="email"
-            placeholder="Email Address"
+            type='email'
+            placeholder='Email Address'
             required
           />
           <input
             style={styles.inputStyle}
-            type="password"
-            placeholder="Password"
+            type='password'
+            placeholder='Password'
             required
           />
           <PrimaryButton style={styles.buttonStyle}>Signup</PrimaryButton>

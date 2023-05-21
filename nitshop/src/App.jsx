@@ -28,7 +28,7 @@ import { BlogScreen } from "./Screens/BlogScreen/BlogScreen";
 import { AboutScreen } from "./Screens/AboutScreen/AboutScreen";
 import { ContactScreen } from "./Screens/ContactScreen/ContactScreen";
 import { CartScreen } from "./Screens/CartScreen/CartScreen";
-import CartContextProvider, { CartContext } from "./context/CartContext";
+import CartContextProvider from "./context/CartContext";
 import UserContextProvider from "./context/UserContext";
 import LoginScreen from "./Screens/LoginScreen/LoginScreen";
 

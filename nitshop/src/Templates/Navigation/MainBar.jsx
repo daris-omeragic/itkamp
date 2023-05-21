@@ -10,8 +10,11 @@ import StarIcon from "@mui/icons-material/Star";
 import LocationSearchingIcon from "@mui/icons-material/LocationSearching";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import LockIcon from "@mui/icons-material/Lock";
+import LoginIcon from '@mui/icons-material/Login';
 import SimplifiedDiv from "../../components/SimplifiedDiv/SimplifiedDiv";
 import { Link } from "react-router-dom";
+import { UserContext } from "../../context/UserContext";
+import { useContext } from "react";
 
 const iconStyle = {
   fontSize: fontSize.medium,
@@ -24,6 +27,7 @@ const MainBar = () => {
   const rightMenuMargin = screenWidth === "SM" ? "20px 5px" : "0px";
   const rightMenuJustify = screenWidth === "SM" ? "flex-start" : "flex-end";
   const rightmenuItemsMargin = screenWidth === "SM" ? "0px 5px" : "0px 10px";
+  const { user } = useContext(UserContext);
 
   const RightMenu = () => (
     <CustomDiv
@@ -35,14 +39,18 @@ const MainBar = () => {
       margin={rightMenuMargin}
     >
       <CustomDiv display='flex' margin={rightmenuItemsMargin}>
-        <PersonIcon style={iconStyle} />
+      {user.name ? <PersonIcon style={iconStyle} /> : <LoginIcon style={iconStyle} />}
+
         <Text
           fontFamily={fontFamily.LatoRegular}
           fontSize={fontSize.smallPlus}
-          color={colors.gray}
+          color={user.name ? colors.accentColor : colors.gray}
+          border={user.name ? 'solid' : 'none'}
+          padding = {user.name ? '5px' : '0px'}
+          borderRadius = {'3px'}
+          style={{marginLeft : '3px'}}
         >
-          Account
-        </Text>
+          {user.name ? user.name : "Account"}</Text>
       </CustomDiv>
       <CustomDiv display='flex' margin={rightmenuItemsMargin}>
         <StarIcon style={iconStyle} />
