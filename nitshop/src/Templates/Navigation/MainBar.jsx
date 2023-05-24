@@ -45,9 +45,9 @@ const MainBar = () => {
           fontFamily={fontFamily.LatoRegular}
           fontSize={fontSize.smallPlus}
           color={user.name ? colors.accentColor : colors.gray}
-          border={user.name ? 'solid' : 'none'}
-          padding = {user.name ? '5px' : '0px'}
-          borderRadius = {'3px'}
+          borderBottom={user.name ? '1px solid gray': 'none'}
+          padding = {user.name ? '3px' : '0px'}
+          borderRadius = {'6px'}
           style={{marginLeft : '3px'}}
         >
           {user.name ? user.name : "Account"}</Text>

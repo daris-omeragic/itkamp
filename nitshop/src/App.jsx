@@ -24,7 +24,7 @@ import "./assets/fonts/Montserrat-ExtraLight.ttf";
 import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 import HomePageScreen from "./Screens/HomePageScreen/HomePageScreen";
 import ShopScreen from "./Screens/ShopScreen/ShopScreen";
-import { BlogScreen } from "./Screens/BlogScreen/BlogScreen";
+import BlogScreen from "./Screens/BlogScreen/BlogScreen";
 import { AboutScreen } from "./Screens/AboutScreen/AboutScreen";
 import { ContactScreen } from "./Screens/ContactScreen/ContactScreen";
 import { CartScreen } from "./Screens/CartScreen/CartScreen";

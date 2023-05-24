@@ -67,9 +67,10 @@ const TopRow = () => {
             <PhoneIcon
               style={{
                 fontSize: fontSize.normal,
+                color : colors.gray,
               }}
             />
-            <Text fontFamily={fontFamily.LatoRegular} fontSize={fontSize.small}>
+            <Text fontFamily={fontFamily.LatoRegular} fontSize={fontSize.small} color={colors.gray}>
               +38163333333
             </Text>
             <CustomDiv
@@ -80,11 +81,13 @@ const TopRow = () => {
               <EmailIcon
                 style={{
                   fontSize: fontSize.normal,
+                  color : colors.gray,
                 }}
               />
               <Text
                 fontFamily={fontFamily.LatoRegular}
                 fontSize={fontSize.small}
+                color = {colors.gray}
               >
                 info@mail.com
               </Text>
