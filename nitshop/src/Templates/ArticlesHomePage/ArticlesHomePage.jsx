@@ -8,6 +8,8 @@ import article3 from "../../assets/images/home/product3.jpg";
 import { CartContext } from "../../context/CartContext";
 import { generateId } from "../../util/theme";
 import { UserContext } from "../../context/UserContext";
+import { useDispatch, useSelector } from "react-redux";
+import { addToCart } from "../../redux/CartSlice";
 
 const loremText =
   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
@@ -64,11 +66,13 @@ export const articles = [
 ];
 
 const ArticlesHomePage = () => {
+  const articless = useSelector((state) => state.cart);
+  const dispatch = useDispatch();
+
   //Postaviti funkcije koje ce izlistavati artikle
 
   const { items, setItems } = useContext(CartContext);
-  const { setUserDetails } = useContext(UserContext);
-
+  const { setUser } = useContext(UserContext);
 
   function addArticleHandler(article) {
     let existingIndex = items.findIndex((item) => item.id === article.id);
@@ -88,28 +92,25 @@ const ArticlesHomePage = () => {
     }
   }
 
-  console.log("items", items);
+  console.log("items", articless);
 
   return (
     <SimplifiedDiv style={{}}>
       <Grid container direction='row' spacing={3}>
-        {articles.map((article) => {
-          return (
-            <Grid item md={4} lg={4}>
-              <ArticleCard
-                title={article.title}
-                description={article.description}
-                image={article.image}
-                price={article.price}
-                article={article}
-                onClickButton={(value) => addArticleHandler(value)}
-              />
-            </Grid>
-          );
-        })}
+        {articles.map((article) => (
+          <Grid item md={4} lg={4}>
+            <ArticleCard
+              title={article.title}
+              description={article.description}
+              image={article.image}
+              price={article.price}
+              article={article}
+              onClickButton={(value) => dispatch(addToCart(value))}
+            />
+          </Grid>
+        ))}
       </Grid>
     </SimplifiedDiv>
   );
 };
-
 export default ArticlesHomePage;
