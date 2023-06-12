@@ -70,7 +70,6 @@ const Login = () => {
         setUsers(allUsers);
       }
     });
-
     return () => {
       mount = false;
     };

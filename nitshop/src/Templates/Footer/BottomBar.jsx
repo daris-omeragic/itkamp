@@ -2,20 +2,24 @@ import React from 'react'
 import SimplifiedDiv from '../../components/SimplifiedDiv/SimplifiedDiv';
 import { colors, fontSize } from '../../util/theme';
 import Text from '../../components/Text/Text';
+import { getScreenWidth } from '../../util/helpers';
 
 export const BottomBar = () => {
+    const screenWidth = getScreenWidth();
+  const padding = screenWidth === "SM" ? "0px 10px" : "10px 160px";
+  const paragraphSize = screenWidth === "SM" ? '10px' : "12px" 
     const styles = {
         mainDiv: {
             backgroundColor: colors.lightGray,
             height: '30px',
             display: 'flex',
             justifyContent: 'space-between',
-            padding: '10px 160px',
+            padding: padding,
             alignItems: 'center',
         },
         innerText: {
             color: colors.white,
-            fontSize : fontSize.optimal,
+            fontSize : paragraphSize,
         }
     }
     return (

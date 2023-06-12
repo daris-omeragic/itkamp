@@ -8,7 +8,11 @@ export const postEndpoint = {
 
 export const commentsEndpoint = {
     fetchAll : 'https://jsonplaceholder.typicode.com/comments'
-}
+};
+
+export const productsEndpoint = {
+    fetchAll : 'https://dummyjson.com/products'
+};
 
 
 

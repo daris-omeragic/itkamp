@@ -3,12 +3,15 @@ import Text from "../../../components/Text/Text";
 import SimplifiedDiv from "../../../components/SimplifiedDiv/SimplifiedDiv";
 import { colors, fontSize, fontWeight } from "../../../util/theme";
 import { Grid } from "@mui/material";
+import { getScreenWidth } from "../../../util/helpers";
 
 const FooterLinkBar = () => {
+  const screenWidth = getScreenWidth();
+  const padding = screenWidth === "SM" ? "10px 25px" : "20px 150px";
   const styles = {
     mainHolder: {
       backgroundColor: colors.secondColor,
-      padding: "20px 150px",
+      padding : padding
     },
     headingText: {
       textAlign: "left",
@@ -29,6 +32,7 @@ const FooterLinkBar = () => {
       color : colors.gray,
     }
   };
+ 
   const FirstRow = () => (
     <SimplifiedDiv style={styles.innerBoxHolder}>
       <Text style={styles.innerBoxText}>Online help</Text>
@@ -69,31 +73,31 @@ const FooterLinkBar = () => {
   return (
     <SimplifiedDiv style={styles.mainHolder}>
       <Grid container direction='row'>
-        <Grid item md={2} lg={2}>
+        <Grid item xs={6} sm={6} md={2} lg={2}>
           <SimplifiedDiv style={styles.boxHolder}>
             <Text style={styles.headingText}>Service</Text>
             <FirstRow/>
           </SimplifiedDiv>
         </Grid>
-        <Grid item md={2} lg={2}>
+        <Grid item xs={6} sm={6} md={2} lg={2}>
           <SimplifiedDiv style={styles.boxHolder}>
             <Text style={styles.headingText}>Quick shop</Text>
             <SecondRow/>
           </SimplifiedDiv>
         </Grid>
-        <Grid item md={2} lg={2}>
+        <Grid item xs={6} sm={6} md={2} lg={2}>
           <SimplifiedDiv style={styles.boxHolder}>
             <Text style={styles.headingText}>Policies</Text>
             <ThirdRow/>
           </SimplifiedDiv>
         </Grid>
-        <Grid item md={2} lg={2}>
+        <Grid item xs={6} sm={6} md={2} lg={2}>
           <SimplifiedDiv style={styles.boxHolder}>
             <Text style={styles.headingText}>About Shopper</Text>
             <FourthRow/>
           </SimplifiedDiv>
         </Grid>
-        <Grid item md={2} lg={2}></Grid>
+        <Grid item xs={12} sm={12} md={2} lg={2}></Grid>
       </Grid>
     </SimplifiedDiv>
   );

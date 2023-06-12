@@ -9,6 +9,8 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import Text from "../../components/Text/Text";
 import { getScreenWidth } from "../../util/helpers";
+import styled from 'styled-components';
+
 
 const SocialIcons = () => (
   <>
@@ -36,15 +38,21 @@ const SocialIcons = () => (
   </>
 );
 
-const TopRow = () => {
-  const screenWidth = getScreenWidth();
 
-  const alignItemsInFirstDiv = screenWidth === "SM" ? "center" : "flex-start";
-  const alignItemsInSecondDiv = screenWidth === "SM" ? "center" : "flex-end";
-  const paddingInDiv = screenWidth === "SM" ? "10px 0px" : "0px";
-  const topDivHeight = screenWidth === "SM" ? "auto" : "30px";
-  const responsivePadding =
-    screenWidth === "SM" ? "0px" : screenWidth === "MD" ? "0px" : "0px 10%";
+
+const screenWidth = getScreenWidth();
+export const alignItemsInFirstDiv = screenWidth === "SM" ? "center" : "flex-start";
+export const alignItemsInSecondDiv = screenWidth === "SM" ? "center" : "flex-end";
+export const paddingInDiv = screenWidth === "SM" ? "10px 0px" : "0px";
+export const topDivHeight = screenWidth === "SM" ? "auto" : "30px";
+export const responsivePadding =
+  screenWidth === "SM" ? "0px" : screenWidth === "MD" ? "0px" : "0px 10%";
+
+  const TopRow = () => {
+
+// styles.js
+
+
 
   return (
     <CustomDiv

@@ -50,6 +50,7 @@ const styles = {
 
 const LinkBar = () => {
   const screenWidth = getScreenWidth();
+  const padding = screenWidth === "SM" ? "4px 41px" : "0px 10px";
 
   const [isOpen, setIsOpen] = useState(false);
 
@@ -96,7 +97,7 @@ const LinkBar = () => {
     <SimplifiedDiv
       style={{
         display: "block",
-        padding: "0px 10px",
+        padding:padding,
         width: "100%",
       }}
     >
