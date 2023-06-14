@@ -10,7 +10,7 @@ import { generateId } from "../../util/theme";
 import { UserContext } from "../../context/UserContext";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../../redux/CartSlice";
-
+import { getScreenWidth } from "../../util/helpers";
 const loremText =
   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
 
@@ -66,6 +66,8 @@ export const articles = [
 ];
 
 const ArticlesHomePage = () => {
+  const screenWidth = getScreenWidth();
+ const width = screenWidth === "SM" ? "30%" : "100%";
   const articless = useSelector((state) => state.cart);
   const dispatch = useDispatch();
 
@@ -95,10 +97,10 @@ const ArticlesHomePage = () => {
   console.log("items", articless);
 
   return (
-    <SimplifiedDiv style={{}}>
+    <SimplifiedDiv style={{width : width}}>
       <Grid container direction='row' spacing={3}>
         {articles.map((article) => (
-          <Grid item md={4} lg={4}>
+          <Grid item xs={12} sm={12} md={4} lg={4}>
             <ArticleCard
               title={article.title}
               description={article.description}
