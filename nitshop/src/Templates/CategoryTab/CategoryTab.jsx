@@ -3,6 +3,7 @@ import SimplifiedDiv from "../../components/SimplifiedDiv/SimplifiedDiv";
 import Text from "../../components/Text/Text";
 import { colors, fontSize } from "../../util/theme";
 import AddIcon from "@mui/icons-material/Add";
+import { Grid } from "@mui/material";
 
 const categories = [
   {
@@ -117,6 +118,8 @@ const CategoryTab = () => {
 
   return (
     <SimplifiedDiv style={styles.container}>
+      <Grid container direction='column'>
+        <Grid item xs={12} sm={12} md={12} lg={12}>
       {categories.map((cat, index) => {
         const filteredSubcategories = subCategory.filter(
           (sub) => sub.categoryName === cat.name
@@ -149,6 +152,8 @@ const CategoryTab = () => {
           </>
         );
       })}
+    </Grid>
+    </Grid>
     </SimplifiedDiv>
   );
 };

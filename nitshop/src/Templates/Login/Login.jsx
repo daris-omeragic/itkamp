@@ -6,8 +6,14 @@ import { colors, fontSize } from '../../util/theme';
 import PrimaryButton from '../../components/PrimaryButton/PrimaryButton';
 import { UserContext } from '../../context/UserContext';
 import { fetchAllUsers } from '../../api/userApi';
+import { getScreenWidth } from '../../util/helpers';
 
 const Login = () => {
+  const screenWidth = getScreenWidth();
+  const marginTop = screenWidth === "SM" ? "20px" : "40px";
+  const marginLeft = screenWidth === "SM" ? "0px" : "60px";
+  const fontSize = screenWidth === "SM" ? "15px" : "15px";
+  const marginTopRoundDiv = screenWidth === "SM" ? "40px" : "80px";
   const styles = {
     mainDiv: {
       padding: "5% 10%",
@@ -16,12 +22,14 @@ const Login = () => {
       fontSize: fontSize.medium,
       marginBottom: "20px",
       color: colors.gray,
+      marginTop: marginTop,
     },
     inputStyle: {
       padding: "10px 5px",
       marginBottom: "15px",
       border: 'none',
-      background: colors.secondColor
+      background: colors.secondColor,
+      fontSize: fontSize,
     },
     checkboxWrapper: {
       display: "flex",
@@ -50,8 +58,8 @@ const Login = () => {
       color: colors.white,
       width: "60px",
       height: "60px",
-      marginTop: "40px",
-      marginLeft: "60px",
+      marginTop: marginTopRoundDiv,
+      marginLeft: marginLeft,
     },
     formStyle: {
       display: "flex",
@@ -61,7 +69,7 @@ const Login = () => {
 
   const [users, setUsers] = useState([]);
 
-  const { user, setUser } = useContext(UserContext);
+
   useEffect(() => {
     let mount = true;
 
@@ -70,12 +78,11 @@ const Login = () => {
         setUsers(allUsers);
       }
     });
+
     return () => {
       mount = false;
     };
   }, []);
-  console.log(users);
-
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -105,72 +112,50 @@ const Login = () => {
       console.log('Invalid credentials!');
     }
   };
+  const [user, setUser] = useState({ name: '', email: '' });
 
-  const userNamesAndEmails = users.map((user) => {
-    return {
-      name: user.name,
-      email: user.email,
-    };
-  });
-  
-  console.log(userNamesAndEmails);
-  
+const logoutHandler = () => {
+  setUser({ name: '', email: '' });
+  console.log('Logged out!');
+};
 
-
-
-  return (
-    <Grid item lg={12} style={styles.mainDiv} container>
-      <Grid item lg={5} md={5} display='flex' flexDirection='column'>
+return (
+  <Grid item xs={12} sm={12} md={12} lg={12} style={styles.mainDiv} container>
+    <Grid item lg={5} md={5} display="flex" flexDirection="column" width="100%">
+      {user.name ? (
+        <>
+          <Text style={styles.textStyle}>Logged in as: {user.name}</Text>
+          <PrimaryButton style={styles.buttonStyle} onClick={logoutHandler}>
+            Logout
+          </PrimaryButton>
+        </>
+      ) : (
         <form onSubmit={loginHandler} style={styles.formStyle}>
-          <Text style={styles.textStyle}>Login to your acoount</Text>
-          <input
-            style={styles.inputStyle}
-            type='text'
-            placeholder='Name'
-            required
-          />
-          <input
-            style={styles.inputStyle}
-            type='email'
-            placeholder='Email'
-            required
-          />
+          <Text style={styles.textStyle}>Login to your account</Text>
+          <input style={styles.inputStyle} type="text" placeholder="Name" required />
+          <input style={styles.inputStyle} type="email" placeholder="Email" required />
           <SimplifiedDiv style={styles.checkboxWrapper}>
-            <input type='checkbox' />
+            <input type="checkbox" />
             <Text>Keep me signed in</Text>
           </SimplifiedDiv>
           <PrimaryButton style={styles.buttonStyle}>Login</PrimaryButton>
         </form>
-      </Grid>
-      <Grid item lg={2} display='flex'>
-        <div style={styles.roundDiv}>OR</div>
-      </Grid>
-      <Grid item lg={5} display='flex' flexDirection='column'>
-        <Text style={styles.textStyle}>New User Signup!</Text>
-        <form onSubmit={submitHandler} style={styles.formStyle}>
-          <input
-            style={styles.inputStyle}
-            type='text'
-            placeholder='Name'
-            required
-          />
-          <input
-            style={styles.inputStyle}
-            type='email'
-            placeholder='Email Address'
-            required
-          />
-          <input
-            style={styles.inputStyle}
-            type='password'
-            placeholder='Password'
-            required
-          />
-          <PrimaryButton style={styles.buttonStyle}>Signup</PrimaryButton>
-        </form>
-      </Grid>
+      )}
     </Grid>
-  );
+    <Grid item lg={2} display="flex">
+      <div style={styles.roundDiv}>OR</div>
+    </Grid>
+    <Grid item lg={5} display="flex" flexDirection="column" width="100%">
+      <Text style={styles.textStyle}>New User Signup!</Text>
+      <form onSubmit={submitHandler} style={styles.formStyle}>
+        <input style={styles.inputStyle} type="text" placeholder="Name" required />
+        <input style={styles.inputStyle} type="email" placeholder="Email Address" required />
+        <input style={styles.inputStyle} type="password" placeholder="Password" required />
+        <PrimaryButton style={styles.buttonStyle}>Signup</PrimaryButton>
+      </form>
+    </Grid>
+  </Grid>
+);
 };
 export default Login;
 

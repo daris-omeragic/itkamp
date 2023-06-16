@@ -53,6 +53,7 @@ export const responsivePadding =
 // styles.js
 
 
+   /* Koristi prop za definisanje boje hover efekta */
 
   return (
     <CustomDiv
