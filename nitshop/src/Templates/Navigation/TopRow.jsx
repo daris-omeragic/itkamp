@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import Grid from "@mui/material/Grid";
 import CustomDiv from "../../components/CustomDiv/CustomDiv";
 import { colors, fontFamily, fontSize } from "../../util/theme";
@@ -9,34 +9,69 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import Text from "../../components/Text/Text";
 import { getScreenWidth } from "../../util/helpers";
-import styled from 'styled-components';
 
 
-const SocialIcons = () => (
-  <>
-    <TwitterIcon
-      style={{
-        fontSize: fontSize.normal,
-        color: colors.gray,
-        margin: "0px 10px",
-      }}
-    />
-    <InstagramIcon
-      style={{
-        fontSize: fontSize.normal,
-        color: colors.gray,
-        margin: "0px 10px",
-      }}
-    />
-    <FacebookIcon
-      style={{
-        fontSize: fontSize.normal,
-        color: colors.gray,
-        margin: "0px 10px",
-      }}
-    />
-  </>
-);
+
+
+
+const SocialIcons = () => {
+  const iconStyles = [
+    {
+      icon: <TwitterIcon />,
+      baseColor: "gray",
+      hoverColor: colors.white,
+      baseBackground: "transparent",
+      hoverBackground: "lightblue",
+    },
+    {
+      icon: <InstagramIcon />,
+      baseColor: "gray",
+      hoverColor: colors.white,
+      baseBackground: "transparent",
+      hoverBackground: "pink",
+    },
+    {
+      icon: <FacebookIcon />,
+      baseColor: "gray",
+      hoverColor: "white",
+      baseBackground: "transparent",
+      hoverBackground: "blue",
+    },
+  ];
+
+  const [hoveredIcon, setHoveredIcon] = useState(null);
+
+  const handleIconMouseEnter = (index) => {
+    setHoveredIcon(index);
+  };
+
+  const handleIconMouseLeave = () => {
+    setHoveredIcon(null);
+  };
+
+  return (
+    <>
+      {iconStyles.map((style, index) => (
+        <div
+          key={index}
+          className="social-icon"
+          onMouseEnter={() => handleIconMouseEnter(index)}
+          onMouseLeave={handleIconMouseLeave}
+        >
+          {React.cloneElement(style.icon, {
+            style: {
+              fontSize: fontSize.normal,
+              color: hoveredIcon === index ? style.hoverColor : style.baseColor,
+              margin: "0px 10px",
+              backgroundColor:
+                hoveredIcon === index ? style.hoverBackground : style.baseBackground,
+            },
+          })}
+        </div>
+      ))}
+    </>
+  );
+};
 
 
 

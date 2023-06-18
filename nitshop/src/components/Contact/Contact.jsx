@@ -1,9 +1,7 @@
-import { useState, useEffect } from 'react'
+import  React from 'react'
 
 import { colors, fontFamily, fontSize } from '../../util/theme';
 import { Grid, TextField } from '@mui/material';
-import SimplifiedDiv from '../SimplifiedDiv/SimplifiedDiv';
-import Text from '../Text/Text';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import YouTubeIcon from '@mui/icons-material/YouTube';

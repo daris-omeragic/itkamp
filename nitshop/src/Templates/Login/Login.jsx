@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import SimplifiedDiv from '../../components/SimplifiedDiv/SimplifiedDiv';
 import Text from '../../components/Text/Text';
 import { Grid } from '@mui/material';
-import { colors, fontSize } from '../../util/theme';
+import { colors } from '../../util/theme';
 import PrimaryButton from '../../components/PrimaryButton/PrimaryButton';
 import { UserContext } from '../../context/UserContext';
 import { fetchAllUsers } from '../../api/userApi';
@@ -12,8 +12,10 @@ const Login = () => {
   const screenWidth = getScreenWidth();
   const marginTop = screenWidth === "SM" ? "20px" : "40px";
   const marginLeft = screenWidth === "SM" ? "0px" : "60px";
-  const fontSize = screenWidth === "SM" ? "15px" : "15px";
+  const fontSize = screenWidth === "SM" ? "15px" : "16px";
   const marginTopRoundDiv = screenWidth === "SM" ? "40px" : "80px";
+
+  
   const styles = {
     mainDiv: {
       padding: "5% 10%",
@@ -68,8 +70,16 @@ const Login = () => {
   };
 
   const [users, setUsers] = useState([]);
-
-
+  const { user, setUser } = useContext(UserContext);                        
+  const submitHandler = (e) => {
+    e.preventDefault();
+    setUser({
+      name: e.target[0].value,
+      email: e.target[1].value,
+      password: e.target[2].value,
+    });
+  };
+  // Fetch all users
   useEffect(() => {
     let mount = true;
 
@@ -84,78 +94,68 @@ const Login = () => {
     };
   }, []);
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-    setUser({
-      name: e.target[0].value,
-      email: e.target[1].value,
-      password: e.target[2].value,
-    });
-  };
-
   const loginHandler = (e) => {
     e.preventDefault();
-  
+
     const enteredName = e.target[0].value;
     const enteredEmail = e.target[1].value;
-  
+
     const loggedInUser = users.find((user) => user.name === enteredName && user.email === enteredEmail);
-  
+
     if (loggedInUser) {
       setUser({
         name: loggedInUser.name,
         email: loggedInUser.email,
       });
-  
+
       console.log('Logged in!');
     } else {
       console.log('Invalid credentials!');
     }
   };
-  const [user, setUser] = useState({ name: '', email: '' });
+console.log(users)
+  const logoutHandler = () => {
+    setUser({ name: '', email: '' });
+    console.log('Logged out!');
+  };
 
-const logoutHandler = () => {
-  setUser({ name: '', email: '' });
-  console.log('Logged out!');
-};
-
-return (
-  <Grid item xs={12} sm={12} md={12} lg={12} style={styles.mainDiv} container>
-    <Grid item lg={5} md={5} display="flex" flexDirection="column" width="100%">
-      {user.name ? (
-        <>
-          <Text style={styles.textStyle}>Logged in as: {user.name}</Text>
-          <PrimaryButton style={styles.buttonStyle} onClick={logoutHandler}>
-            Logout
-          </PrimaryButton>
-        </>
-      ) : (
-        <form onSubmit={loginHandler} style={styles.formStyle}>
-          <Text style={styles.textStyle}>Login to your account</Text>
+  return (
+    <Grid item xs={12} sm={12} md={12} lg={12} style={styles.mainDiv} container>
+      <Grid item lg={5} md={5} display="flex" flexDirection="column" width="100%">
+        {user.name ? (
+          <>
+            <Text style={styles.textStyle}>Logged in as: {user.name}</Text>
+            <PrimaryButton style={styles.buttonStyle} onClick={logoutHandler}>
+              Logout
+            </PrimaryButton>
+          </>
+        ) : (
+          <form onSubmit={loginHandler} style={styles.formStyle}>
+            <Text style={styles.textStyle}>Login to your account</Text>
+            <input style={styles.inputStyle} type="text" placeholder="Name" required />
+            <input style={styles.inputStyle} type="email" placeholder="Email" required />
+            <SimplifiedDiv style={styles.checkboxWrapper}>
+              <input type="checkbox" />
+              <Text>Keep me signed in</Text>
+            </SimplifiedDiv>
+            <PrimaryButton style={styles.buttonStyle}>Login</PrimaryButton>
+          </form>
+        )}
+      </Grid>
+      <Grid item lg={2} display="flex">
+        <div style={styles.roundDiv}>OR</div>
+      </Grid>
+      <Grid item lg={5} display="flex" flexDirection="column" width="100%">
+        <Text style={styles.textStyle}>New User Signup!</Text>
+        <form onSubmit={submitHandler} style={styles.formStyle}>
           <input style={styles.inputStyle} type="text" placeholder="Name" required />
-          <input style={styles.inputStyle} type="email" placeholder="Email" required />
-          <SimplifiedDiv style={styles.checkboxWrapper}>
-            <input type="checkbox" />
-            <Text>Keep me signed in</Text>
-          </SimplifiedDiv>
-          <PrimaryButton style={styles.buttonStyle}>Login</PrimaryButton>
+          <input style={styles.inputStyle} type="email" placeholder="Email Address" required />
+          <input style={styles.inputStyle} type="password" placeholder="Password" required />
+          <PrimaryButton style={styles.buttonStyle}>Signup</PrimaryButton>
         </form>
-      )}
+      </Grid>
     </Grid>
-    <Grid item lg={2} display="flex">
-      <div style={styles.roundDiv}>OR</div>
-    </Grid>
-    <Grid item lg={5} display="flex" flexDirection="column" width="100%">
-      <Text style={styles.textStyle}>New User Signup!</Text>
-      <form onSubmit={submitHandler} style={styles.formStyle}>
-        <input style={styles.inputStyle} type="text" placeholder="Name" required />
-        <input style={styles.inputStyle} type="email" placeholder="Email Address" required />
-        <input style={styles.inputStyle} type="password" placeholder="Password" required />
-        <PrimaryButton style={styles.buttonStyle}>Signup</PrimaryButton>
-      </form>
-    </Grid>
-  </Grid>
-);
+  );
 };
 export default Login;
 
