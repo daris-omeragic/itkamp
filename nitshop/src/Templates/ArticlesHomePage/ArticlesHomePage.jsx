@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext} from "react";
 import ArticleCard from "../ArticleCard/ArticleCard";
 import { Grid } from "@mui/material";
 import SimplifiedDiv from "../../components/SimplifiedDiv/SimplifiedDiv";
@@ -7,10 +7,7 @@ import article2 from "../../assets/images/home/product2.jpg";
 import article3 from "../../assets/images/home/product3.jpg";
 import { CartContext } from "../../context/CartContext";
 import { generateId } from "../../util/theme";
-import { UserContext } from "../../context/UserContext";
-import { useDispatch, useSelector } from "react-redux";
-import { addToCart } from "../../redux/CartSlice";
-import { getScreenWidth } from "../../util/helpers";
+
 const loremText =
   "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.";
 
@@ -66,48 +63,33 @@ export const articles = [
 ];
 
 const ArticlesHomePage = () => {
-  const screenWidth = getScreenWidth();
- const width = screenWidth === "SM" ? "30%" : "100%";
-  const articless = useSelector((state) => state.cart);
-  const dispatch = useDispatch();
+  const { setItems } = useContext(CartContext);
 
-  //Postaviti funkcije koje ce izlistavati artikle
-
-  const { items, setItems } = useContext(CartContext);
-  const { setUser } = useContext(UserContext);
-
-  function addArticleHandler(article) {
-    let existingIndex = items.findIndex((item) => item.id === article.id);
-    console.log(existingIndex, article);
-    if (existingIndex >= 0) {
-      setItems(
-        items.map((item) => {
-          let quantity = item.qty + 1;
-          let price = item.price * quantity;
-          return item.id === article.id
-            ? { ...item, price, qty: quantity }
-            : item;
-        })
-      );
-    } else {
-      setItems((prev) => [...prev, article]);
-    }
-  }
-
-  console.log("items", articless);
+  const addArticleHandler = (article) => {
+    setItems((prevItems) => {
+      const existingItem = prevItems.find((item) => item.id === article.id);
+      if (existingItem) {
+        return prevItems.map((item) =>
+          item.id === article.id ? { ...item, qty: item.qty + 1 } : item
+        );
+      } else {
+        return [...prevItems, { ...article, qty: 1 }];
+      }
+    });
+  };
 
   return (
-    <SimplifiedDiv style={{width : width}}>
-      <Grid container direction='row' spacing={3}>
+    <SimplifiedDiv style={{ padding: '10px' }}>
+      <Grid container spacing={3}>
         {articles.map((article) => (
-          <Grid item xs={12} sm={12} md={4} lg={4}>
+          <Grid item xs={12} sm={12} md={4} key={article.id}>
             <ArticleCard
               title={article.title}
               description={article.description}
               image={article.image}
               price={article.price}
               article={article}
-              onClickButton={(value) => dispatch(addToCart(value))}
+              onClickButton={() => addArticleHandler(article)}
             />
           </Grid>
         ))}
@@ -115,4 +97,5 @@ const ArticlesHomePage = () => {
     </SimplifiedDiv>
   );
 };
+
 export default ArticlesHomePage;

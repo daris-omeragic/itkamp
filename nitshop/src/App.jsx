@@ -25,12 +25,16 @@ import { createBrowserRouter, RouterProvider, } from "react-router-dom";
 import HomePageScreen from "./Screens/HomePageScreen/HomePageScreen";
 import ShopScreen from "./Screens/ShopScreen/ShopScreen";
 import BlogScreen from "./Screens/BlogScreen/BlogScreen";
-import { AboutScreen } from "./Screens/AboutScreen/AboutScreen";
+import NotFoundScreen from "./Screens/NotFoundScreen/NotFoundScreen";
 import { ContactScreen } from "./Screens/ContactScreen/ContactScreen";
 import { CartScreen } from "./Screens/CartScreen/CartScreen";
 import CartContextProvider from "./context/CartContext";
 import UserContextProvider from "./context/UserContext";
 import LoginScreen from "./Screens/LoginScreen/LoginScreen";
+import CheckoutScreen from "./Screens/CheckoutScreen/CheckoutScreen";
+import { ContactProvider } from "./context/ContactContext";
+import CheckoutProvider from "./context/CheckoutContext";
+
 
 
 
@@ -52,7 +56,7 @@ const App = () => {
     },
     {
       path: "/about",
-      element: <AboutScreen />
+      element: <NotFoundScreen/>
     },
     {
       path: "/contact",
@@ -63,15 +67,23 @@ const App = () => {
       element: <CartScreen />
     },
     {
-      path : '/login',
-      element : <LoginScreen/>
-    }
+      path: '/login',
+      element: <LoginScreen />
+    },
+    {
+      path: '/Checkout',
+      element: <CheckoutScreen />
+    },
   ]);
   return (
     <>
       <UserContextProvider>
         <CartContextProvider>
-          <RouterProvider router={router} />
+          <CheckoutProvider>
+            <ContactProvider>
+              <RouterProvider router={router} />
+            </ContactProvider>
+          </CheckoutProvider>
         </CartContextProvider>
       </UserContextProvider>
     </>

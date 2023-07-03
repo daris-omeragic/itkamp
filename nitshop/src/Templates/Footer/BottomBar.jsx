@@ -1,6 +1,6 @@
 import React from 'react'
 import SimplifiedDiv from '../../components/SimplifiedDiv/SimplifiedDiv';
-import { colors, fontSize } from '../../util/theme';
+import { colors} from '../../util/theme';
 import Text from '../../components/Text/Text';
 import { getScreenWidth } from '../../util/helpers';
 

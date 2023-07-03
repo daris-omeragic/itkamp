@@ -4,15 +4,11 @@ const cartSlice = createSlice({
   name: "cart",
   initialState: [],
   reducers: {
-    addToCart: (state, payload) => {
-      state.push(payload);
+    addToCart: (state, action) => {
+      state.push(action.payload);
     },
-    removeFromCart: (state, payload) => {
-      state.map((item) =>
-        item.id === payload.payload.id && item.qty > 1
-          ? { ...item, qty: item.qty - 1 }
-          : item
-      );
+    removeFromCart: (state, action) => {
+      return state.filter((item) => item.id !== action.payload.id);
     },
   },
 });
@@ -20,3 +16,4 @@ const cartSlice = createSlice({
 export const { addToCart, removeFromCart } = cartSlice.actions;
 
 export default cartSlice.reducer;
+

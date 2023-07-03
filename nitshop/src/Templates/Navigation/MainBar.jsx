@@ -62,6 +62,7 @@ const MainBar = () => {
           Wishlist
         </Text>
       </CustomDiv>
+      <Link to='/Checkout'>
       <CustomDiv display='flex' margin={rightmenuItemsMargin}>
         <LocationSearchingIcon style={iconStyle} />
         <Text
@@ -72,6 +73,7 @@ const MainBar = () => {
           Checkout
         </Text>
       </CustomDiv>
+      </Link>
       <Link to="/cart">
         <CustomDiv display="flex" margin={rightmenuItemsMargin}>
           <ShoppingCartIcon style={iconStyle} />

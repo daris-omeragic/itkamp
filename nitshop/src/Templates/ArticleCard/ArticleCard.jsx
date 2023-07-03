@@ -1,81 +1,78 @@
 import React from 'react';
-import Text from '../../components/Text/Text';
 import SimplifiedDiv from '../../components/SimplifiedDiv/SimplifiedDiv';
-import { Card } from '@mui/material';
-import { fontSize, colors, fontWeight } from '../../util/theme';
-import PrimaryButton from "../../components/PrimaryButton/PrimaryButton";
+import { colors } from '../../util/theme';
+import { Card, Typography, Button } from "@mui/material";
 import ShoppingCartOutlined from "@mui/icons-material/ShoppingCartOutlined";
 
 
 
-const ArticleCard = ({
-  title,
-  description,
-  image,
-  price,
-  onClickButton,
-  article,
-}) => {
+const ArticleCard = ({ title, description, image, price, onClickButton }) => {
   const styles = {
+    card: {
+      height: "100%",
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "space-between",
+    },
     imageContainer: {
       width: "100%",
-      height: "200px",
+      height: "auto",
+      marginBottom: "8px",
     },
     image: {
       objectFit: "contain",
       width: "100%",
-      height: "100%",
+      maxHeight: "150px",
     },
     descriptionContainer: {
-      display: "grid",
-      placeItems: "center",
-      gap: 8,
-      margin: "10px 15px",
+      flexGrow: 1,
+      display: "flex",
+      flexDirection: "column",
+      justifyContent: "center",
+      marginBottom: "8px",
+      textAlign: "center",
     },
     buttonHolder: {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
-      padding: "10px",
     },
     shoppingCartIcon: {
-      fontSize: fontSize.normal,
-      margin: "0px 3px",
+      fontSize: "20px",
+      marginRight: "4px",
+      color: colors.white,
     },
   };
 
-  const altTag = title !== "" ? title : "Article image";
-
   return (
-    <Card>
+    <Card style={styles.card}>
       <SimplifiedDiv style={styles.imageContainer}>
-        <img src={image} style={styles.image} alt={altTag} />
+        <img src={image} alt={title} style={styles.image} />
       </SimplifiedDiv>
       <SimplifiedDiv style={styles.descriptionContainer}>
-        <Text
-          color={colors.accentColor}
-          fontWeight={fontWeight.mediumBold}
-          fontSize={fontSize.large}
-        >
-          {price + "$"}
-        </Text>
-        <Text fontSize={fontSize.medium}>{title}</Text>
-        <Text color={colors.lightBlack} fontSize={fontSize.optimal}>
-          {description.length > 70
-            ? description.slice(0, 70) + "..."
-            : description}
-        </Text>
+        <Typography variant="h6" gutterBottom>
+          {title}
+        </Typography>
+        <Typography variant="body2" color="textSecondary">
+          {description.length > 70 ? `${description.slice(0, 70)}...` : description}
+        </Typography>
+        <Typography variant="h6" color={colors.accentColor}>
+          {price}$
+        </Typography>
       </SimplifiedDiv>
       <SimplifiedDiv style={styles.buttonHolder}>
-        <PrimaryButton
-          primary
-          borderRadius='3px'
-          padding='10px'
-          onClick={() => onClickButton(article)}
+        <Button
+          variant="contained"
+          color="primary"
+          startIcon={<ShoppingCartOutlined style={styles.shoppingCartIcon} />}
+          onClick={onClickButton}
+          style={{
+            borderRadius: "3px", background: colors.accentColor, padding: "6px",
+            fontSize: "12px", marginBottom: '25px'
+          }}
         >
-          <ShoppingCartOutlined style={styles.shoppingCartIcon} />
-          Add to cart
-        </PrimaryButton>
+          Add to Cart
+        </Button>
       </SimplifiedDiv>
     </Card>
   );

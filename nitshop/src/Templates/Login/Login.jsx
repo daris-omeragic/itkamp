@@ -143,7 +143,7 @@ console.log(users)
         )}
       </Grid>
       <Grid item lg={2} display="flex">
-        <div style={styles.roundDiv}>OR</div>
+        <SimplifiedDiv style={styles.roundDiv}>OR</SimplifiedDiv>
       </Grid>
       <Grid item lg={5} display="flex" flexDirection="column" width="100%">
         <Text style={styles.textStyle}>New User Signup!</Text>

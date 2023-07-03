@@ -5,8 +5,8 @@ import Contact from '../../components/Contact/Contact'
 import { alignItemsInFirstDiv, alignItemsInSecondDiv, paddingInDiv, topDivHeight, responsivePadding } from '../../Templates/Navigation/TopRow';
 
 export const ContactScreen = () => {
-  const proba = {
-    proba: {
+  const style = {
+    style: {
       alignItemsInFirstDiv: alignItemsInFirstDiv,
       alignItemsInSecondDiv: alignItemsInSecondDiv,
       paddingInDiv: paddingInDiv, topDivHeight: topDivHeight,
@@ -15,7 +15,7 @@ export const ContactScreen = () => {
   }
   return (
     <>
-    <Navigation style = {proba}/>
+    <Navigation style = {style}/>
     <Contact/>
     <Footer/>
     </>
